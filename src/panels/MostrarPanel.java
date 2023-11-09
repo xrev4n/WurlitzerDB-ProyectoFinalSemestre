@@ -46,7 +46,7 @@ public class MostrarPanel extends javax.swing.JPanel {
         txtResultado.setRows(5);
         jScrollPane1.setViewportView(txtResultado);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 270, 360));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 270, 360));
 
         btnMostrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_mostrar.png"))); // NOI18N
         btnMostrar.setBorderPainted(false);

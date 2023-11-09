@@ -22,6 +22,8 @@ public class Conectar extends javax.swing.JFrame {
     private static final String driver="com.mysql.jdbc.Driver";
     private static final String user="root";
     private static final String pass="";
+    //Variables Barra Ventana
+    int xMouse,yMouse;
     //Url de la base de datos (Revisar si el puerto corresponde)
     private static final String url="jdbc:mysql://localhost:3306/wurlitzerdb";
     //Funcion conectar
@@ -84,9 +86,13 @@ public class Conectar extends javax.swing.JFrame {
         btnMostrar = new javax.swing.JButton();
         btnSolicitar = new javax.swing.JButton();
         background = new javax.swing.JLabel();
+        panelVentana = new javax.swing.JPanel();
+        btnSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(0, 0, 51));
+        setBackground(new java.awt.Color(255, 255, 255));
+        setLocationByPlatform(true);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnConectar.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
@@ -126,7 +132,7 @@ public class Conectar extends javax.swing.JFrame {
             .addGap(0, 600, Short.MAX_VALUE)
         );
 
-        getContentPane().add(Agregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 580, 600));
+        getContentPane().add(Agregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, 580, 570));
 
         btnAgregar.setBackground(new java.awt.Color(255, 255, 255));
         btnAgregar.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
@@ -141,7 +147,7 @@ public class Conectar extends javax.swing.JFrame {
                 btnAgregarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 220, 50));
+        getContentPane().add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 220, 50));
 
         bgTitle.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -174,7 +180,7 @@ public class Conectar extends javax.swing.JFrame {
         btnEliminar.setContentAreaFilled(false);
         btnEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnEliminar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_eliminar_sel.png"))); // NOI18N
-        getContentPane().add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 220, -1));
+        getContentPane().add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 220, -1));
 
         btnModificar.setBackground(new java.awt.Color(255, 255, 255));
         btnModificar.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
@@ -189,7 +195,7 @@ public class Conectar extends javax.swing.JFrame {
                 btnModificarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 220, 50));
+        getContentPane().add(btnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 220, 50));
 
         btnMostrar.setBackground(new java.awt.Color(60, 63, 65));
         btnMostrar.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
@@ -204,16 +210,57 @@ public class Conectar extends javax.swing.JFrame {
                 btnMostrarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 220, 50));
+        getContentPane().add(btnMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 220, 50));
 
         btnSolicitar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_solicitar.png"))); // NOI18N
         btnSolicitar.setContentAreaFilled(false);
         btnSolicitar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnSolicitar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_solicitar_sel.png"))); // NOI18N
-        getContentPane().add(btnSolicitar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, 220, -1));
+        getContentPane().add(btnSolicitar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 220, -1));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/abstract_background_2.jpg"))); // NOI18N
         getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 220, 600));
+
+        panelVentana.setBackground(new java.awt.Color(255, 255, 255));
+        panelVentana.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                panelVentanaMouseDragged(evt);
+            }
+        });
+        panelVentana.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                panelVentanaMousePressed(evt);
+            }
+        });
+
+        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_salir.png"))); // NOI18N
+        btnSalir.setBorder(null);
+        btnSalir.setContentAreaFilled(false);
+        btnSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSalir.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_salir_sel.png"))); // NOI18N
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panelVentanaLayout = new javax.swing.GroupLayout(panelVentana);
+        panelVentana.setLayout(panelVentanaLayout);
+        panelVentanaLayout.setHorizontalGroup(
+            panelVentanaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelVentanaLayout.createSequentialGroup()
+                .addContainerGap(770, Short.MAX_VALUE)
+                .addComponent(btnSalir)
+                .addContainerGap())
+        );
+        panelVentanaLayout.setVerticalGroup(
+            panelVentanaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelVentanaLayout.createSequentialGroup()
+                .addGap(0, 6, Short.MAX_VALUE)
+                .addComponent(btnSalir))
+        );
+
+        getContentPane().add(panelVentana, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -261,6 +308,27 @@ public class Conectar extends javax.swing.JFrame {
        Agregar.repaint();
     }//GEN-LAST:event_btnMostrarActionPerformed
 
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void panelVentanaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelVentanaMousePressed
+        // TODO add your handling code here:
+        //Asigna valores actuales a variables de posicion del mouse
+        xMouse = evt.getX();
+        yMouse = evt.getY();
+    }//GEN-LAST:event_panelVentanaMousePressed
+
+    private void panelVentanaMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelVentanaMouseDragged
+        // TODO add your handling code here:
+        //Asigna posicion del mouse en la pantalla
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        //Mueve ventana a la posicion del mouse
+        this.setLocation(x-xMouse , y-yMouse);
+    }//GEN-LAST:event_panelVentanaMouseDragged
+
     /**
      * @param args the command line arguments
      */
@@ -305,8 +373,10 @@ public class Conectar extends javax.swing.JFrame {
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnModificar;
     private javax.swing.JButton btnMostrar;
+    private javax.swing.JButton btnSalir;
     private javax.swing.JButton btnSolicitar;
     private javax.swing.JLabel lblResultado;
     private javax.swing.JLabel lblWulritzer;
+    private javax.swing.JPanel panelVentana;
     // End of variables declaration//GEN-END:variables
 }
