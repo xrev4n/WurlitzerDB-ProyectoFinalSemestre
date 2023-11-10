@@ -1,7 +1,13 @@
 package panels;
 
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -217,7 +223,11 @@ public class AgregarPanel extends javax.swing.JPanel {
         else{
             lblResultado.setText("No Agrego Correctamente!");
         }
-        
+        try {
+            insertarCancionEnDB(cancionAux);
+        } catch (SQLException ex) {
+            Logger.getLogger(AgregarPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnEnviarActionPerformed
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
@@ -267,4 +277,32 @@ public class AgregarPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtID;
     private javax.swing.JTextField txtTitulo;
     // End of variables declaration//GEN-END:variables
+
+        public static void insertarCancionEnDB(Cancion cancion) throws SQLException {
+        // Configuración de la conexión a la base de datos
+        String url = "jdbc:mysql://localhost:3306/wurlitzerdb";
+        String usuario = "root";
+        String contraseña = "";
+
+        // Establecer la conexión
+        Connection conexion = DriverManager.getConnection(url, usuario, contraseña);
+        // Crear la sentencia SQL para la inserción
+        String sql = "INSERT INTO canciones (id_cancion, titulo, autor, disco, anio, duracion_minuto, duracion_segundo, estilo) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        try (PreparedStatement preparedStatement = conexion.prepareStatement(sql)) {
+            // Establecer los valores de los parámetros
+            preparedStatement.setInt(1, cancion.getId_cancion());
+            preparedStatement.setString(2, cancion.getTitulo());
+            preparedStatement.setString(3, cancion.getAutor());
+            preparedStatement.setString(4, cancion.getDisco());
+            preparedStatement.setInt(5, cancion.getAnio());
+            preparedStatement.setInt(6, cancion.getDuracion_minuto());
+            preparedStatement.setInt(7, cancion.getDuracion_segundo());
+            preparedStatement.setString(8, cancion.getEstilo());
+            
+            // Ejecutar la inserción
+            preparedStatement.executeUpdate();
+            
+            System.out.println("Canción insertada correctamente en la base de datos.");
+        }
+    }
 }
