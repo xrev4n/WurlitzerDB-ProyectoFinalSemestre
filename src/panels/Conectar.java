@@ -21,7 +21,7 @@ public class Conectar extends javax.swing.JFrame {
     //Declarar variables para realizar conexion
     private static final String driver="com.mysql.jdbc.Driver";
     private static final String user="root";
-    private static final String pass="root";
+    private static final String pass="";
     //Variables Barra Ventana
     int xMouse,yMouse;
     //Url de la base de datos (Revisar si el puerto corresponde)

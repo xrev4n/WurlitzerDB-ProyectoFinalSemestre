@@ -287,7 +287,7 @@ public class AgregarPanel extends javax.swing.JPanel {
         // Establecer la conexión
         Connection conexion = DriverManager.getConnection(url, usuario, contraseña);
         // Crear la sentencia SQL para la inserción
-        String sql = "INSERT INTO canciones (id_cancion, titulo, autor, disco, anio, duracion_minuto, duracion_segundo, estilo) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO cancion (id_cancion, titulo, autor, disco, año, duracion_minuto, duracion_segundo, estilo) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         try (PreparedStatement preparedStatement = conexion.prepareStatement(sql)) {
             // Establecer los valores de los parámetros
             preparedStatement.setInt(1, cancion.getId_cancion());
