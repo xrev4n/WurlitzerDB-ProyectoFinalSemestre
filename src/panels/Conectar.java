@@ -110,7 +110,7 @@ public class Conectar extends javax.swing.JFrame {
         getContentPane().add(btnConectar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 550, 220, 40));
 
         lblResultado.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        lblResultado.setForeground(new java.awt.Color(255, 255, 255));
+        lblResultado.setForeground(new java.awt.Color(11, 19, 43));
         lblResultado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblResultado.setText("Estado");
         getContentPane().add(lblResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 505, 220, 30));
@@ -149,7 +149,7 @@ public class Conectar extends javax.swing.JFrame {
         });
         getContentPane().add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 220, 50));
 
-        bgTitle.setBackground(new java.awt.Color(0, 0, 0));
+        bgTitle.setBackground(new java.awt.Color(28, 37, 65));
 
         lblWulritzer.setBackground(new java.awt.Color(0, 0, 102));
         lblWulritzer.setFont(new java.awt.Font("Strasua", 0, 30)); // NOI18N
@@ -180,7 +180,7 @@ public class Conectar extends javax.swing.JFrame {
         btnEliminar.setContentAreaFilled(false);
         btnEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnEliminar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_eliminar_sel.png"))); // NOI18N
-        getContentPane().add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 220, -1));
+        getContentPane().add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 220, -1));
 
         btnModificar.setBackground(new java.awt.Color(255, 255, 255));
         btnModificar.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
@@ -195,7 +195,7 @@ public class Conectar extends javax.swing.JFrame {
                 btnModificarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 220, 50));
+        getContentPane().add(btnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 220, 50));
 
         btnMostrar.setBackground(new java.awt.Color(60, 63, 65));
         btnMostrar.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
@@ -210,15 +210,15 @@ public class Conectar extends javax.swing.JFrame {
                 btnMostrarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 220, 50));
+        getContentPane().add(btnMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 220, 50));
 
         btnSolicitar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_solicitar.png"))); // NOI18N
         btnSolicitar.setContentAreaFilled(false);
         btnSolicitar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnSolicitar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_solicitar_sel.png"))); // NOI18N
-        getContentPane().add(btnSolicitar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 220, -1));
+        getContentPane().add(btnSolicitar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 220, -1));
 
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/abstract_background_2.jpg"))); // NOI18N
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/background.png"))); // NOI18N
         getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 220, 600));
 
         panelVentana.setBackground(new java.awt.Color(255, 255, 255));

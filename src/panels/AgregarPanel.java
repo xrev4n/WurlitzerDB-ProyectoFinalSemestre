@@ -93,33 +93,37 @@ public class AgregarPanel extends javax.swing.JPanel {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel4.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setForeground(new java.awt.Color(11, 19, 43));
         jLabel4.setText("Autor");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 150, 30));
 
         jLabel3.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setForeground(new java.awt.Color(11, 19, 43));
         jLabel3.setText("Titulo");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 150, 20));
 
         txtTitulo.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        txtTitulo.setForeground(new java.awt.Color(11, 19, 43));
         txtTitulo.setBorder(null);
         jPanel1.add(txtTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 150, 30));
 
         txtDisco.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        txtDisco.setForeground(new java.awt.Color(11, 19, 43));
         txtDisco.setBorder(null);
         jPanel1.add(txtDisco, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 190, 160, 30));
 
         txtDuracionSeg.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        txtDuracionSeg.setForeground(new java.awt.Color(11, 19, 43));
         txtDuracionSeg.setBorder(null);
         jPanel1.add(txtDuracionSeg, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 150, 30));
 
         jLabel2.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setForeground(new java.awt.Color(11, 19, 43));
         jLabel2.setText("ID");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 80, 160, 20));
 
         txtID.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        txtID.setForeground(new java.awt.Color(11, 19, 43));
         txtID.setBorder(null);
         txtID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -130,10 +134,12 @@ public class AgregarPanel extends javax.swing.JPanel {
         jPanel1.add(lblResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 480, 150, 20));
 
         txtAutor.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        txtAutor.setForeground(new java.awt.Color(11, 19, 43));
         txtAutor.setBorder(null);
         jPanel1.add(txtAutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 150, 30));
 
         txtDuracionMin.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        txtDuracionMin.setForeground(new java.awt.Color(11, 19, 43));
         txtDuracionMin.setBorder(null);
         txtDuracionMin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -143,35 +149,37 @@ public class AgregarPanel extends javax.swing.JPanel {
         jPanel1.add(txtDuracionMin, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 150, 30));
 
         jLabel6.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel6.setForeground(new java.awt.Color(11, 19, 43));
         jLabel6.setText("Duración(min.)");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 250, 40));
 
         txtEstilo.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        txtEstilo.setForeground(new java.awt.Color(11, 19, 43));
         txtEstilo.setBorder(null);
         jPanel1.add(txtEstilo, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 350, 160, 30));
 
         jLabel8.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel8.setForeground(new java.awt.Color(11, 19, 43));
         jLabel8.setText("Estilo");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 310, 160, 30));
 
         txtAño.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        txtAño.setForeground(new java.awt.Color(11, 19, 43));
         txtAño.setBorder(null);
         jPanel1.add(txtAño, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 270, 160, 30));
 
         jLabel9.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel9.setForeground(new java.awt.Color(11, 19, 43));
         jLabel9.setText("Año");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 230, 160, 30));
 
         jLabel7.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel7.setForeground(new java.awt.Color(11, 19, 43));
         jLabel7.setText("Duracion (seg.)");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 250, 30));
 
         jLabel5.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setForeground(new java.awt.Color(11, 19, 43));
         jLabel5.setText("Disco");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 150, 160, 30));
         jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 140, 160, 10));
