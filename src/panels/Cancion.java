@@ -4,13 +4,12 @@ package panels;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-
 /**
  *
  * @author felip
  */
 public class Cancion {
-    
+
     private int id_cancion;
     private String titulo;
     private String autor;
@@ -19,11 +18,11 @@ public class Cancion {
     private int duracion_minuto;
     private int duracion_segundo;
     private String estilo;
-    
+
     @Override
     public String toString() {
-        return "Cancion" + "\n ID: " + id_cancion + "\n Titulo: " + titulo + "\n Autor: " + autor + "\n Disco: " + disco + "\n Año: " + anio 
-               + "\n Duracion: " + duracion_minuto + ":" + duracion_segundo + "\n Estilo: " + estilo +  "\n ---------------";
+        return "Cancion" + "\n ID: " + id_cancion + "\n Titulo: " + titulo + "\n Autor: " + autor + "\n Disco: " + disco + "\n Año: " + anio
+                + "\n Duracion: " + duracion_minuto + ":" + duracion_segundo + "\n Estilo: " + estilo + "\n ---------------";
     }
 
     public int getId_cancion() {

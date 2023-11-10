@@ -1,6 +1,5 @@
 package panels;
 
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -13,7 +12,6 @@ import java.util.logging.Logger;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-
 /**
  *
  * @author felip
@@ -206,7 +204,7 @@ public class AgregarPanel extends javax.swing.JPanel {
     private void btnEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarActionPerformed
         // TODO add your handling code here:
         Cancion cancionAux = new Cancion();
-        
+
         cancionAux.setId_cancion(Integer.parseInt(txtID.getText()));
         cancionAux.setTitulo(txtTitulo.getText());
         cancionAux.setAutor(txtAutor.getText());
@@ -215,11 +213,10 @@ public class AgregarPanel extends javax.swing.JPanel {
         cancionAux.setDuracion_minuto(Integer.parseInt(txtDuracionMin.getText()));
         cancionAux.setDuracion_segundo(Integer.parseInt(txtDuracionSeg.getText()));
         cancionAux.setEstilo(txtEstilo.getText());
-        
+
         if (listaCanciones.add(cancionAux)) {
             lblResultado.setText("Cancion Agregada Exitosamente!");
-        }
-        else{
+        } else {
             lblResultado.setText("No Agrego Correctamente!");
         }
         try {
@@ -231,14 +228,14 @@ public class AgregarPanel extends javax.swing.JPanel {
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
         // TODO add your handling code here:
-         txtID.setText("");
-       txtTitulo.setText("");
-       txtAutor.setText("");
-       txtDisco.setText("");
-       txtAño.setText("");
-       txtDuracionMin.setText("");
-       txtDuracionSeg.setText("");
-       txtEstilo.setText("");
+        txtID.setText("");
+        txtTitulo.setText("");
+        txtAutor.setText("");
+        txtDisco.setText("");
+        txtAño.setText("");
+        txtDuracionMin.setText("");
+        txtDuracionSeg.setText("");
+        txtEstilo.setText("");
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
     private void txtIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIDActionPerformed
@@ -277,7 +274,7 @@ public class AgregarPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtTitulo;
     // End of variables declaration//GEN-END:variables
 
-        public static void insertarCancionEnDB(Cancion cancion) throws SQLException {
+    public static void insertarCancionEnDB(Cancion cancion) throws SQLException {
         // Configuración de la conexión a la base de datos
         String url = "jdbc:mysql://localhost:3306/wurlitzerdb";
         String usuario = "root";
@@ -297,10 +294,10 @@ public class AgregarPanel extends javax.swing.JPanel {
             preparedStatement.setInt(6, cancion.getDuracion_minuto());
             preparedStatement.setInt(7, cancion.getDuracion_segundo());
             preparedStatement.setString(8, cancion.getEstilo());
-            
+
             // Ejecutar la inserción
             preparedStatement.executeUpdate();
-            
+
             System.out.println("Canción insertada correctamente en la base de datos.");
         }
     }
