@@ -46,7 +46,7 @@ public class MostrarPanel extends javax.swing.JPanel {
         txtResultado.setRows(5);
         jScrollPane1.setViewportView(txtResultado);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 270, 360));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, 320, 470));
 
         btnMostrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_mostrar.png"))); // NOI18N
         btnMostrar.setBorderPainted(false);
@@ -58,7 +58,7 @@ public class MostrarPanel extends javax.swing.JPanel {
                 btnMostrarActionPerformed(evt);
             }
         });
-        add(btnMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 490, -1, -1));
+        add(btnMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 510, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarActionPerformed

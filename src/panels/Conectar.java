@@ -274,7 +274,7 @@ public class Conectar extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         AgregarPanel agPn = new AgregarPanel();
-        agPn.setSize(580, 600);
+        agPn.setSize(580, 570);
         agPn.setLocation(0,0);
         
        Agregar.removeAll();
@@ -287,7 +287,7 @@ public class Conectar extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         ModificarPanel moPn = new ModificarPanel();
-        moPn.setSize(580, 600);
+        moPn.setSize(580, 570);
         moPn.setLocation(0,0);
         
        Agregar.removeAll();
@@ -299,7 +299,7 @@ public class Conectar extends javax.swing.JFrame {
     private void btnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarActionPerformed
         // TODO add your handling code here:
         MostrarPanel mosPn = new MostrarPanel();
-        mosPn.setSize(580, 600);
+        mosPn.setSize(580, 570);
         mosPn.setLocation(0,0);
         
        Agregar.removeAll();
