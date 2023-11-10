@@ -2,6 +2,7 @@ package panels;
 
 
 import java.awt.BorderLayout;
+import java.awt.geom.RoundRectangle2D;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -58,6 +59,7 @@ public class Conectar extends javax.swing.JFrame {
         agPn.setSize(800, 600);
         agPn.setLocation(0,0);
         this.setResizable(false);
+        this.setShape(new RoundRectangle2D.Double(0,0,getWidth(),getHeight(),25,25));
         
        Agregar.removeAll();
        Agregar.add(agPn, BorderLayout.CENTER);
@@ -134,9 +136,7 @@ public class Conectar extends javax.swing.JFrame {
 
         getContentPane().add(Agregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, 580, 570));
 
-        btnAgregar.setBackground(new java.awt.Color(255, 255, 255));
         btnAgregar.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        btnAgregar.setForeground(new java.awt.Color(0, 0, 0));
         btnAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_agregar.png"))); // NOI18N
         btnAgregar.setBorder(null);
         btnAgregar.setContentAreaFilled(false);
@@ -152,7 +152,7 @@ public class Conectar extends javax.swing.JFrame {
         bgTitle.setBackground(new java.awt.Color(28, 37, 65));
 
         lblWulritzer.setBackground(new java.awt.Color(0, 0, 102));
-        lblWulritzer.setFont(new java.awt.Font("Strasua", 0, 30)); // NOI18N
+        lblWulritzer.setFont(new java.awt.Font("Roboto", 0, 27)); // NOI18N
         lblWulritzer.setForeground(new java.awt.Color(255, 255, 255));
         lblWulritzer.setText("WULRITZER DB");
 
@@ -161,14 +161,14 @@ public class Conectar extends javax.swing.JFrame {
         bgTitleLayout.setHorizontalGroup(
             bgTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgTitleLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(18, Short.MAX_VALUE)
                 .addComponent(lblWulritzer)
-                .addContainerGap())
+                .addGap(15, 15, 15))
         );
         bgTitleLayout.setVerticalGroup(
             bgTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgTitleLayout.createSequentialGroup()
-                .addContainerGap(17, Short.MAX_VALUE)
+                .addContainerGap(22, Short.MAX_VALUE)
                 .addComponent(lblWulritzer)
                 .addContainerGap())
         );
@@ -182,9 +182,7 @@ public class Conectar extends javax.swing.JFrame {
         btnEliminar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_eliminar_sel.png"))); // NOI18N
         getContentPane().add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 220, -1));
 
-        btnModificar.setBackground(new java.awt.Color(255, 255, 255));
         btnModificar.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        btnModificar.setForeground(new java.awt.Color(0, 0, 0));
         btnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_modificar.png"))); // NOI18N
         btnModificar.setBorder(null);
         btnModificar.setContentAreaFilled(false);
@@ -199,7 +197,6 @@ public class Conectar extends javax.swing.JFrame {
 
         btnMostrar.setBackground(new java.awt.Color(60, 63, 65));
         btnMostrar.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        btnMostrar.setForeground(new java.awt.Color(0, 0, 0));
         btnMostrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_mostrar.png"))); // NOI18N
         btnMostrar.setBorder(null);
         btnMostrar.setContentAreaFilled(false);
