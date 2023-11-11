@@ -1,13 +1,17 @@
 package panels;
 
-
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-
 /**
  *
  * @author felip
@@ -32,24 +36,24 @@ public class AgregarPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        bg = new javax.swing.JPanel();
+        lblAutor = new javax.swing.JLabel();
+        lblTitulo = new javax.swing.JLabel();
         txtTitulo = new javax.swing.JTextField();
         txtDisco = new javax.swing.JTextField();
         txtDuracionSeg = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
+        lblID = new javax.swing.JLabel();
         txtID = new javax.swing.JTextField();
         lblResultado = new javax.swing.JLabel();
         txtAutor = new javax.swing.JTextField();
         txtDuracionMin = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
+        lblDuracion = new javax.swing.JLabel();
         txtEstilo = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
+        lblEstilo = new javax.swing.JLabel();
         txtAño = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        lblAño = new javax.swing.JLabel();
+        lblDuracionSeg = new javax.swing.JLabel();
+        lblDisco = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
@@ -64,39 +68,38 @@ public class AgregarPanel extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(600, 580));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        bg.setBackground(new java.awt.Color(255, 255, 255));
+        bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel4.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(11, 19, 43));
-        jLabel4.setText("Autor");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 150, 30));
+        lblAutor.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        lblAutor.setForeground(new java.awt.Color(11, 19, 43));
+        lblAutor.setText("Autor");
+        bg.add(lblAutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 150, 30));
 
-        jLabel3.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(11, 19, 43));
-        jLabel3.setText("Titulo");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 150, 20));
+        lblTitulo.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        lblTitulo.setForeground(new java.awt.Color(11, 19, 43));
+        lblTitulo.setText("Titulo");
+        bg.add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 150, 20));
 
         txtTitulo.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
         txtTitulo.setForeground(new java.awt.Color(11, 19, 43));
         txtTitulo.setBorder(null);
-        jPanel1.add(txtTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 150, 30));
+        bg.add(txtTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 150, 30));
 
         txtDisco.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
         txtDisco.setForeground(new java.awt.Color(11, 19, 43));
         txtDisco.setBorder(null);
-        jPanel1.add(txtDisco, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, 160, 30));
+        bg.add(txtDisco, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, 160, 30));
 
         txtDuracionSeg.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
         txtDuracionSeg.setForeground(new java.awt.Color(11, 19, 43));
         txtDuracionSeg.setBorder(null);
-        jPanel1.add(txtDuracionSeg, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 150, 30));
+        bg.add(txtDuracionSeg, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 150, 30));
 
-        jLabel2.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(11, 19, 43));
-        jLabel2.setText("ID");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 20, 160, 20));
+        lblID.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        lblID.setForeground(new java.awt.Color(11, 19, 43));
+        lblID.setText("ID");
+        bg.add(lblID, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 20, 160, 20));
 
         txtID.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
         txtID.setForeground(new java.awt.Color(11, 19, 43));
@@ -106,13 +109,13 @@ public class AgregarPanel extends javax.swing.JPanel {
                 txtIDActionPerformed(evt);
             }
         });
-        jPanel1.add(txtID, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 50, 160, 30));
-        jPanel1.add(lblResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 480, 150, 20));
+        bg.add(txtID, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 50, 160, 30));
+        bg.add(lblResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 480, 150, 20));
 
         txtAutor.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
         txtAutor.setForeground(new java.awt.Color(11, 19, 43));
         txtAutor.setBorder(null);
-        jPanel1.add(txtAutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 150, 30));
+        bg.add(txtAutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 150, 30));
 
         txtDuracionMin.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
         txtDuracionMin.setForeground(new java.awt.Color(11, 19, 43));
@@ -122,50 +125,50 @@ public class AgregarPanel extends javax.swing.JPanel {
                 txtDuracionMinActionPerformed(evt);
             }
         });
-        jPanel1.add(txtDuracionMin, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 150, 30));
+        bg.add(txtDuracionMin, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 150, 30));
 
-        jLabel6.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(11, 19, 43));
-        jLabel6.setText("Duración(min.)");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 250, 40));
+        lblDuracion.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        lblDuracion.setForeground(new java.awt.Color(11, 19, 43));
+        lblDuracion.setText("Duración(min.)");
+        bg.add(lblDuracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 250, 40));
 
         txtEstilo.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
         txtEstilo.setForeground(new java.awt.Color(11, 19, 43));
         txtEstilo.setBorder(null);
-        jPanel1.add(txtEstilo, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 290, 160, 30));
+        bg.add(txtEstilo, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 290, 160, 30));
 
-        jLabel8.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(11, 19, 43));
-        jLabel8.setText("Estilo");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 250, 160, 30));
+        lblEstilo.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        lblEstilo.setForeground(new java.awt.Color(11, 19, 43));
+        lblEstilo.setText("Estilo");
+        bg.add(lblEstilo, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 250, 160, 30));
 
         txtAño.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
         txtAño.setForeground(new java.awt.Color(11, 19, 43));
         txtAño.setBorder(null);
-        jPanel1.add(txtAño, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 210, 160, 30));
+        bg.add(txtAño, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 210, 160, 30));
 
-        jLabel9.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(11, 19, 43));
-        jLabel9.setText("Año");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 170, 160, 30));
+        lblAño.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        lblAño.setForeground(new java.awt.Color(11, 19, 43));
+        lblAño.setText("Año");
+        bg.add(lblAño, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 170, 160, 30));
 
-        jLabel7.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(11, 19, 43));
-        jLabel7.setText("Duracion (seg.)");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 250, 30));
+        lblDuracionSeg.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        lblDuracionSeg.setForeground(new java.awt.Color(11, 19, 43));
+        lblDuracionSeg.setText("Duracion (seg.)");
+        bg.add(lblDuracionSeg, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 250, 30));
 
-        jLabel5.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(11, 19, 43));
-        jLabel5.setText("Disco");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, 160, 30));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 80, 160, 10));
-        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 150, 10));
-        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 150, 10));
-        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 150, 10));
-        jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 320, 160, 10));
-        jPanel1.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 150, 10));
-        jPanel1.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 240, 160, 10));
-        jPanel1.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 160, 160, 10));
+        lblDisco.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        lblDisco.setForeground(new java.awt.Color(11, 19, 43));
+        lblDisco.setText("Disco");
+        bg.add(lblDisco, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, 160, 30));
+        bg.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 80, 160, 10));
+        bg.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 150, 10));
+        bg.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 150, 10));
+        bg.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 150, 10));
+        bg.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 320, 160, 10));
+        bg.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 150, 10));
+        bg.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 240, 160, 10));
+        bg.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 160, 160, 10));
 
         btnEnviar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_enviar.png"))); // NOI18N
         btnEnviar.setBorderPainted(false);
@@ -177,7 +180,7 @@ public class AgregarPanel extends javax.swing.JPanel {
                 btnEnviarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnEnviar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 510, -1, -1));
+        bg.add(btnEnviar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 510, -1, -1));
 
         btnLimpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_limpiar.png"))); // NOI18N
         btnLimpiar.setBorderPainted(false);
@@ -189,9 +192,9 @@ public class AgregarPanel extends javax.swing.JPanel {
                 btnLimpiarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 510, -1, -1));
+        bg.add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 510, -1, -1));
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 610));
+        add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 610));
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtDuracionMinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDuracionMinActionPerformed
@@ -201,7 +204,7 @@ public class AgregarPanel extends javax.swing.JPanel {
     private void btnEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarActionPerformed
         // TODO add your handling code here:
         Cancion cancionAux = new Cancion();
-        
+
         cancionAux.setId_cancion(Integer.parseInt(txtID.getText()));
         cancionAux.setTitulo(txtTitulo.getText());
         cancionAux.setAutor(txtAutor.getText());
@@ -210,26 +213,29 @@ public class AgregarPanel extends javax.swing.JPanel {
         cancionAux.setDuracion_minuto(Integer.parseInt(txtDuracionMin.getText()));
         cancionAux.setDuracion_segundo(Integer.parseInt(txtDuracionSeg.getText()));
         cancionAux.setEstilo(txtEstilo.getText());
-        
+
         if (listaCanciones.add(cancionAux)) {
             lblResultado.setText("Cancion Agregada Exitosamente!");
-        }
-        else{
+        } else {
             lblResultado.setText("No Agrego Correctamente!");
         }
-        
+        try {
+            insertarCancionEnDB(cancionAux);
+        } catch (SQLException ex) {
+            Logger.getLogger(AgregarPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnEnviarActionPerformed
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
         // TODO add your handling code here:
-         txtID.setText("");
-       txtTitulo.setText("");
-       txtAutor.setText("");
-       txtDisco.setText("");
-       txtAño.setText("");
-       txtDuracionMin.setText("");
-       txtDuracionSeg.setText("");
-       txtEstilo.setText("");
+        txtID.setText("");
+        txtTitulo.setText("");
+        txtAutor.setText("");
+        txtDisco.setText("");
+        txtAño.setText("");
+        txtDuracionMin.setText("");
+        txtDuracionSeg.setText("");
+        txtEstilo.setText("");
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
     private void txtIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIDActionPerformed
@@ -238,17 +244,9 @@ public class AgregarPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel bg;
     private javax.swing.JButton btnEnviar;
     private javax.swing.JButton btnLimpiar;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
@@ -257,7 +255,15 @@ public class AgregarPanel extends javax.swing.JPanel {
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
+    private javax.swing.JLabel lblAutor;
+    private javax.swing.JLabel lblAño;
+    private javax.swing.JLabel lblDisco;
+    private javax.swing.JLabel lblDuracion;
+    private javax.swing.JLabel lblDuracionSeg;
+    private javax.swing.JLabel lblEstilo;
+    private javax.swing.JLabel lblID;
     private javax.swing.JLabel lblResultado;
+    private javax.swing.JLabel lblTitulo;
     private javax.swing.JTextField txtAutor;
     private javax.swing.JTextField txtAño;
     private javax.swing.JTextField txtDisco;
@@ -267,4 +273,32 @@ public class AgregarPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtID;
     private javax.swing.JTextField txtTitulo;
     // End of variables declaration//GEN-END:variables
+
+    public static void insertarCancionEnDB(Cancion cancion) throws SQLException {
+        // Configuración de la conexión a la base de datos
+        String url = "jdbc:mysql://localhost:3306/wurlitzerdb";
+        String usuario = "root";
+        String contraseña = "";
+
+        // Establecer la conexión
+        Connection conexion = DriverManager.getConnection(url, usuario, contraseña);
+        // Crear la sentencia SQL para la inserción
+        String sql = "INSERT INTO cancion (id_cancion, titulo, autor, disco, año, duracion_minuto, duracion_segundo, estilo) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        try (PreparedStatement preparedStatement = conexion.prepareStatement(sql)) {
+            // Establecer los valores de los parámetros
+            preparedStatement.setInt(1, cancion.getId_cancion());
+            preparedStatement.setString(2, cancion.getTitulo());
+            preparedStatement.setString(3, cancion.getAutor());
+            preparedStatement.setString(4, cancion.getDisco());
+            preparedStatement.setInt(5, cancion.getAnio());
+            preparedStatement.setInt(6, cancion.getDuracion_minuto());
+            preparedStatement.setInt(7, cancion.getDuracion_segundo());
+            preparedStatement.setString(8, cancion.getEstilo());
+
+            // Ejecutar la inserción
+            preparedStatement.executeUpdate();
+
+            System.out.println("Canción insertada correctamente en la base de datos.");
+        }
+    }
 }

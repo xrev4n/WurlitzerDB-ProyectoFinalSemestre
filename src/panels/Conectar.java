@@ -1,7 +1,7 @@
 package panels;
 
-
 import java.awt.BorderLayout;
+import java.awt.geom.RoundRectangle2D;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -10,40 +10,40 @@ import java.sql.SQLException;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-
 /**
  *
  * @author Cetecom
  */
 public class Conectar extends javax.swing.JFrame {
+
     //Instanciar un objeto de clase Connection
     private static Connection con;
     //Declarar variables para realizar conexion
-    private static final String driver="com.mysql.jdbc.Driver";
-    private static final String user="root";
-    private static final String pass="";
+    private static final String driver = "com.mysql.jdbc.Driver";
+    private static final String user = "root";
+    private static final String pass = "";
     //Variables Barra Ventana
-    int xMouse,yMouse;
+    int xMouse, yMouse;
     //Url de la base de datos (Revisar si el puerto corresponde)
-    private static final String url="jdbc:mysql://localhost:3306/wurlitzerdb";
+    private static final String url = "jdbc:mysql://localhost:3306/wurlitzerdb";
+
     //Funcion conectar
-    public void Conectar(){
+    public void Conectar() {
         //Se vacia el objeto Connection
         con = null;
         //Try catch para capturar los errores
-        try{
+        try {
             Class.forName(driver);
             // Nos conectamos a la bd (Volver a escribir los atributos en caso de que arroje error)
             //Se importa DriverManager
-            con= (Connection) DriverManager.getConnection(url, user, pass);
+            con = (Connection) DriverManager.getConnection(url, user, pass);
             // Si la conexion fue exitosa mostramos un mensaje de conexion exitosa
-            if (con!=null){
+            if (con != null) {
                 lblResultado.setText("Conexion establecida");
             }
-        }
-        // Si la conexion NO fue exitosa mostramos un mensaje de error
+        } // Si la conexion NO fue exitosa mostramos un mensaje de error
         //Se importa SQLException
-        catch (ClassNotFoundException | SQLException e){
+        catch (ClassNotFoundException | SQLException e) {
             lblResultado.setText("Error de conexion" + e);
         }
     }
@@ -53,17 +53,18 @@ public class Conectar extends javax.swing.JFrame {
      */
     public Conectar() {
         initComponents();
-        
+
         AgregarPanel agPn = new AgregarPanel();
         agPn.setSize(800, 600);
-        agPn.setLocation(0,0);
+        agPn.setLocation(0, 0);
         this.setResizable(false);
-        
-       Agregar.removeAll();
-       Agregar.add(agPn, BorderLayout.CENTER);
-       Agregar.revalidate();
-       Agregar.repaint();
-        
+        this.setShape(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 25, 25));
+
+        Agregar.removeAll();
+        Agregar.add(agPn, BorderLayout.CENTER);
+        Agregar.revalidate();
+        Agregar.repaint();
+
     }
 
     /**
@@ -134,9 +135,7 @@ public class Conectar extends javax.swing.JFrame {
 
         getContentPane().add(Agregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, 580, 570));
 
-        btnAgregar.setBackground(new java.awt.Color(255, 255, 255));
         btnAgregar.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        btnAgregar.setForeground(new java.awt.Color(0, 0, 0));
         btnAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_agregar.png"))); // NOI18N
         btnAgregar.setBorder(null);
         btnAgregar.setContentAreaFilled(false);
@@ -152,7 +151,7 @@ public class Conectar extends javax.swing.JFrame {
         bgTitle.setBackground(new java.awt.Color(28, 37, 65));
 
         lblWulritzer.setBackground(new java.awt.Color(0, 0, 102));
-        lblWulritzer.setFont(new java.awt.Font("Strasua", 0, 30)); // NOI18N
+        lblWulritzer.setFont(new java.awt.Font("Roboto", 0, 27)); // NOI18N
         lblWulritzer.setForeground(new java.awt.Color(255, 255, 255));
         lblWulritzer.setText("WULRITZER DB");
 
@@ -161,14 +160,14 @@ public class Conectar extends javax.swing.JFrame {
         bgTitleLayout.setHorizontalGroup(
             bgTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgTitleLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(18, Short.MAX_VALUE)
                 .addComponent(lblWulritzer)
-                .addContainerGap())
+                .addGap(15, 15, 15))
         );
         bgTitleLayout.setVerticalGroup(
             bgTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgTitleLayout.createSequentialGroup()
-                .addContainerGap(17, Short.MAX_VALUE)
+                .addContainerGap(22, Short.MAX_VALUE)
                 .addComponent(lblWulritzer)
                 .addContainerGap())
         );
@@ -182,9 +181,7 @@ public class Conectar extends javax.swing.JFrame {
         btnEliminar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_eliminar_sel.png"))); // NOI18N
         getContentPane().add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 220, -1));
 
-        btnModificar.setBackground(new java.awt.Color(255, 255, 255));
         btnModificar.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        btnModificar.setForeground(new java.awt.Color(0, 0, 0));
         btnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_modificar.png"))); // NOI18N
         btnModificar.setBorder(null);
         btnModificar.setContentAreaFilled(false);
@@ -199,7 +196,6 @@ public class Conectar extends javax.swing.JFrame {
 
         btnMostrar.setBackground(new java.awt.Color(60, 63, 65));
         btnMostrar.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        btnMostrar.setForeground(new java.awt.Color(0, 0, 0));
         btnMostrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_mostrar.png"))); // NOI18N
         btnMostrar.setBorder(null);
         btnMostrar.setContentAreaFilled(false);
@@ -272,40 +268,40 @@ public class Conectar extends javax.swing.JFrame {
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
         // TODO add your handling code here:
-        
+
         AgregarPanel agPn = new AgregarPanel();
         agPn.setSize(580, 570);
-        agPn.setLocation(0,0);
-        
-       Agregar.removeAll();
-       Agregar.add(agPn, BorderLayout.CENTER);
-       Agregar.revalidate();
-       Agregar.repaint();
+        agPn.setLocation(0, 0);
+
+        Agregar.removeAll();
+        Agregar.add(agPn, BorderLayout.CENTER);
+        Agregar.revalidate();
+        Agregar.repaint();
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
         // TODO add your handling code here:
-        
+
         ModificarPanel moPn = new ModificarPanel();
         moPn.setSize(580, 570);
-        moPn.setLocation(0,0);
-        
-       Agregar.removeAll();
-       Agregar.add(moPn, BorderLayout.CENTER);
-       Agregar.revalidate();
-       Agregar.repaint();
+        moPn.setLocation(0, 0);
+
+        Agregar.removeAll();
+        Agregar.add(moPn, BorderLayout.CENTER);
+        Agregar.revalidate();
+        Agregar.repaint();
     }//GEN-LAST:event_btnModificarActionPerformed
 
     private void btnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarActionPerformed
         // TODO add your handling code here:
         MostrarPanel mosPn = new MostrarPanel();
         mosPn.setSize(580, 570);
-        mosPn.setLocation(0,0);
-        
-       Agregar.removeAll();
-       Agregar.add(mosPn, BorderLayout.CENTER);
-       Agregar.revalidate();
-       Agregar.repaint();
+        mosPn.setLocation(0, 0);
+
+        Agregar.removeAll();
+        Agregar.add(mosPn, BorderLayout.CENTER);
+        Agregar.revalidate();
+        Agregar.repaint();
     }//GEN-LAST:event_btnMostrarActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
@@ -326,7 +322,7 @@ public class Conectar extends javax.swing.JFrame {
         int x = evt.getXOnScreen();
         int y = evt.getYOnScreen();
         //Mueve ventana a la posicion del mouse
-        this.setLocation(x-xMouse , y-yMouse);
+        this.setLocation(x - xMouse, y - yMouse);
     }//GEN-LAST:event_panelVentanaMouseDragged
 
     /**
