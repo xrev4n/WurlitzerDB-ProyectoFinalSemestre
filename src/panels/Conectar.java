@@ -179,6 +179,11 @@ public class Conectar extends javax.swing.JFrame {
         btnEliminar.setContentAreaFilled(false);
         btnEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnEliminar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_eliminar_sel.png"))); // NOI18N
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 220, -1));
 
         btnModificar.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
@@ -212,6 +217,11 @@ public class Conectar extends javax.swing.JFrame {
         btnSolicitar.setContentAreaFilled(false);
         btnSolicitar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnSolicitar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_solicitar_sel.png"))); // NOI18N
+        btnSolicitar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSolicitarActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnSolicitar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 220, -1));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/background.png"))); // NOI18N
@@ -324,6 +334,30 @@ public class Conectar extends javax.swing.JFrame {
         //Mueve ventana a la posicion del mouse
         this.setLocation(x - xMouse, y - yMouse);
     }//GEN-LAST:event_panelVentanaMouseDragged
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        // TODO add your handling code here:
+        Eliminar1 agPn = new Eliminar1();
+        agPn.setSize(580, 570);
+        agPn.setLocation(0, 0);
+
+        Agregar.removeAll();
+        Agregar.add(agPn, BorderLayout.CENTER);
+        Agregar.revalidate();
+        Agregar.repaint();
+    }//GEN-LAST:event_btnEliminarActionPerformed
+
+    private void btnSolicitarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSolicitarActionPerformed
+        // TODO add your handling code here:
+        Solicitar1 agPn = new Solicitar1();
+        agPn.setSize(580, 570);
+        agPn.setLocation(0, 0);
+
+        Agregar.removeAll();
+        Agregar.add(agPn, BorderLayout.CENTER);
+        Agregar.revalidate();
+        Agregar.repaint();
+    }//GEN-LAST:event_btnSolicitarActionPerformed
 
     /**
      * @param args the command line arguments
