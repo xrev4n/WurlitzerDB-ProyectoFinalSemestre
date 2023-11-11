@@ -8,12 +8,12 @@ package panels;
  *
  * @author felip
  */
-public class ModificarPanel extends javax.swing.JPanel {
+public class Modificar1 extends javax.swing.JPanel {
 
     /**
      * Creates new form ModificarPanel
      */
-    public ModificarPanel() {
+    public Modificar1() {
         initComponents();
     }
 

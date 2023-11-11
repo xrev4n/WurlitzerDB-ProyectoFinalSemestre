@@ -15,7 +15,6 @@ import java.sql.SQLException;
  * @author Cetecom
  */
 public class Conectar extends javax.swing.JFrame {
-
     //Instanciar un objeto de clase Connection
     private static Connection con;
     //Declarar variables para realizar conexion
@@ -292,7 +291,7 @@ public class Conectar extends javax.swing.JFrame {
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
         // TODO add your handling code here:
 
-        ModificarPanel moPn = new ModificarPanel();
+        Modificar1 moPn = new Modificar1();
         moPn.setSize(580, 570);
         moPn.setLocation(0, 0);
 
@@ -385,7 +384,8 @@ public class Conectar extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Conectar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+        //Desactiva escalado automatico de Swing
+        System.setProperty("sun.java2d.uiScale", "1.0");
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
