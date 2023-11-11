@@ -6,6 +6,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -36,8 +38,8 @@ public class MostrarPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         btnMostrar = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        txtResultado = new javax.swing.JTextArea();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setForeground(new java.awt.Color(255, 255, 255));
@@ -56,11 +58,35 @@ public class MostrarPanel extends javax.swing.JPanel {
         });
         add(btnMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 480, -1, -1));
 
-        txtResultado.setColumns(20);
-        txtResultado.setRows(5);
-        jScrollPane2.setViewportView(txtResultado);
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "ID", "Titulo", "Autor", "Disco", "Año", "Minuto", "Segundo", "Estilo"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false
+            };
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 40, 350, 390));
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(jTable1);
+
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarActionPerformed
@@ -96,13 +122,8 @@ public class MostrarPanel extends javax.swing.JPanel {
 
                     listaCanciones.add(cancion);
 
-                    // Realizar acciones con los datos recuperados
-                    txtResultado.setText("");
-                    for (Cancion cancionTemp : listaCanciones) {
-                        txtResultado.setText(txtResultado.getText() + "\n" + cancionTemp.toString());
-                    }
-
                 }
+                LlenarTabla();
             }
 
             // Cerrar la conexión
@@ -115,10 +136,28 @@ public class MostrarPanel extends javax.swing.JPanel {
 
     }//GEN-LAST:event_btnMostrarActionPerformed
 
+    private void LlenarTabla() {
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        model.setRowCount(0); // Clear the existing table data
+
+        for (Cancion cancion : listaCanciones) {
+            Object[] rowData = {
+                cancion.getId_cancion(),
+                cancion.getTitulo(),
+                cancion.getAutor(),
+                cancion.getDisco(),
+                cancion.getAnio(),
+                cancion.getDuracion_minuto(),
+                cancion.getDuracion_segundo(),
+                cancion.getEstilo()
+            };
+            model.addRow(rowData);
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnMostrar;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea txtResultado;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }
