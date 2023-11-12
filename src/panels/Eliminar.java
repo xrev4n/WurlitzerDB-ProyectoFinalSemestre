@@ -45,7 +45,7 @@ public class Eliminar extends javax.swing.JPanel {
         lblResultado = new javax.swing.JLabel();
         lblEliminar = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(225, 245, 254));
+        setBackground(new java.awt.Color(234, 246, 255));
 
         JListCanciones.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         JListCanciones.setModel(new javax.swing.AbstractListModel<String>() {

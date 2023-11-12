@@ -59,13 +59,13 @@ public class Solicitar extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(600, 580));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        bg.setBackground(new java.awt.Color(225, 245, 254));
+        bg.setBackground(new java.awt.Color(234, 246, 255));
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtNombre.setBackground(new java.awt.Color(225, 245, 254));
         txtNombre.setFont(new java.awt.Font("Roboto Thin", 0, 18)); // NOI18N
         txtNombre.setBorder(null);
-        bg.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 400, 210, 30));
+        bg.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 410, 210, 30));
 
         lblResultado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         bg.add(lblResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 450, 580, 20));
@@ -78,19 +78,19 @@ public class Solicitar extends javax.swing.JPanel {
                 txtEscuelaActionPerformed(evt);
             }
         });
-        bg.add(txtEscuela, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 400, 160, 30));
+        bg.add(txtEscuela, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 410, 160, 30));
 
         lblEscuela.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         lblEscuela.setForeground(new java.awt.Color(11, 19, 43));
         lblEscuela.setText("Escuela");
-        bg.add(lblEscuela, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 380, 160, 20));
+        bg.add(lblEscuela, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 390, 160, 20));
 
         lblNombre.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         lblNombre.setForeground(new java.awt.Color(11, 19, 43));
         lblNombre.setText("Nombre Estudiante");
-        bg.add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 380, 220, 20));
-        bg.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 430, 160, 10));
-        bg.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 430, 210, 10));
+        bg.add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 390, 220, 20));
+        bg.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 440, 160, 10));
+        bg.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 440, 210, 10));
 
         btnEnviar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_enviar.png"))); // NOI18N
         btnEnviar.setBorderPainted(false);

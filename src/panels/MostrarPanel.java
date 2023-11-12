@@ -44,7 +44,7 @@ public class MostrarPanel extends javax.swing.JPanel {
         jTable1 = new javax.swing.JTable();
         lblMostrar = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(225, 245, 254));
+        setBackground(new java.awt.Color(234, 246, 255));
         setForeground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(600, 580));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());

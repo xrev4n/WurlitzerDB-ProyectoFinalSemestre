@@ -26,7 +26,7 @@
     <Container class="javax.swing.JPanel" name="bg">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="fe" green="f5" red="e1" type="rgb"/>
+          <Color blue="ff" green="f6" red="ea" type="rgb"/>
         </Property>
       </Properties>
       <Constraints>
@@ -74,7 +74,7 @@
         <Component class="javax.swing.JTextField" name="txtTitulo">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="fe" green="f5" red="e1" type="rgb"/>
+              <Color blue="ff" green="f6" red="ea" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Roboto Thin" size="18" style="0"/>
@@ -95,7 +95,7 @@
         <Component class="javax.swing.JTextField" name="txtDisco">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="fe" green="f5" red="e1" type="rgb"/>
+              <Color blue="ff" green="f6" red="ea" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Roboto Thin" size="18" style="0"/>
@@ -113,7 +113,7 @@
         <Component class="javax.swing.JTextField" name="txtDuracionSeg">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="fe" green="f5" red="e1" type="rgb"/>
+              <Color blue="ff" green="f6" red="ea" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Roboto Thin" size="18" style="0"/>
@@ -147,7 +147,7 @@
         <Component class="javax.swing.JTextField" name="txtID">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="fe" green="f5" red="e1" type="rgb"/>
+              <Color blue="ff" green="f6" red="ea" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Roboto Thin" size="18" style="0"/>
@@ -168,7 +168,7 @@
         <Component class="javax.swing.JTextField" name="txtAutor">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="fe" green="f5" red="e1" type="rgb"/>
+              <Color blue="ff" green="f6" red="ea" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Roboto Thin" size="18" style="0"/>
@@ -186,7 +186,7 @@
         <Component class="javax.swing.JTextField" name="txtDuracionMin">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="fe" green="f5" red="e1" type="rgb"/>
+              <Color blue="ff" green="f6" red="ea" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Roboto Thin" size="18" style="0"/>
@@ -223,7 +223,7 @@
         <Component class="javax.swing.JTextField" name="txtEstilo">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="fe" green="f5" red="e1" type="rgb"/>
+              <Color blue="ff" green="f6" red="ea" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Roboto Thin" size="18" style="0"/>
@@ -257,7 +257,7 @@
         <Component class="javax.swing.JTextField" name="txtA&#xf1;o">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="fe" green="f5" red="e1" type="rgb"/>
+              <Color blue="ff" green="f6" red="ea" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Roboto Thin" size="18" style="0"/>

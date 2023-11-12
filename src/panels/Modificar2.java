@@ -70,7 +70,7 @@ public class Modificar2 extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(600, 580));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        bg.setBackground(new java.awt.Color(225, 245, 254));
+        bg.setBackground(new java.awt.Color(234, 246, 255));
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblAutor.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
@@ -83,7 +83,7 @@ public class Modificar2 extends javax.swing.JPanel {
         lblTitulo.setText("Titulo");
         bg.add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 150, 20));
 
-        txtTitulo.setBackground(new java.awt.Color(225, 245, 254));
+        txtTitulo.setBackground(new java.awt.Color(234, 246, 255));
         txtTitulo.setFont(new java.awt.Font("Roboto Thin", 0, 18)); // NOI18N
         txtTitulo.setBorder(null);
         txtTitulo.addActionListener(new java.awt.event.ActionListener() {
@@ -93,12 +93,12 @@ public class Modificar2 extends javax.swing.JPanel {
         });
         bg.add(txtTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 150, 30));
 
-        txtDisco.setBackground(new java.awt.Color(225, 245, 254));
+        txtDisco.setBackground(new java.awt.Color(234, 246, 255));
         txtDisco.setFont(new java.awt.Font("Roboto Thin", 0, 18)); // NOI18N
         txtDisco.setBorder(null);
         bg.add(txtDisco, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 230, 160, 30));
 
-        txtDuracionSeg.setBackground(new java.awt.Color(225, 245, 254));
+        txtDuracionSeg.setBackground(new java.awt.Color(234, 246, 255));
         txtDuracionSeg.setFont(new java.awt.Font("Roboto Thin", 0, 18)); // NOI18N
         txtDuracionSeg.setBorder(null);
         bg.add(txtDuracionSeg, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, 150, 30));
@@ -108,7 +108,7 @@ public class Modificar2 extends javax.swing.JPanel {
         lblID.setText("ID");
         bg.add(lblID, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 140, 160, 20));
 
-        txtID.setBackground(new java.awt.Color(225, 245, 254));
+        txtID.setBackground(new java.awt.Color(234, 246, 255));
         txtID.setFont(new java.awt.Font("Roboto Thin", 0, 18)); // NOI18N
         txtID.setBorder(null);
         txtID.addActionListener(new java.awt.event.ActionListener() {
@@ -118,12 +118,12 @@ public class Modificar2 extends javax.swing.JPanel {
         });
         bg.add(txtID, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 160, 160, 30));
 
-        txtAutor.setBackground(new java.awt.Color(225, 245, 254));
+        txtAutor.setBackground(new java.awt.Color(234, 246, 255));
         txtAutor.setFont(new java.awt.Font("Roboto Thin", 0, 18)); // NOI18N
         txtAutor.setBorder(null);
         bg.add(txtAutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 150, 30));
 
-        txtDuracionMin.setBackground(new java.awt.Color(225, 245, 254));
+        txtDuracionMin.setBackground(new java.awt.Color(234, 246, 255));
         txtDuracionMin.setFont(new java.awt.Font("Roboto Thin", 0, 18)); // NOI18N
         txtDuracionMin.setBorder(null);
         txtDuracionMin.addActionListener(new java.awt.event.ActionListener() {
@@ -138,7 +138,7 @@ public class Modificar2 extends javax.swing.JPanel {
         lblDuracion.setText("Duración(min.)");
         bg.add(lblDuracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, 160, 20));
 
-        txtEstilo.setBackground(new java.awt.Color(225, 245, 254));
+        txtEstilo.setBackground(new java.awt.Color(234, 246, 255));
         txtEstilo.setFont(new java.awt.Font("Roboto Thin", 0, 18)); // NOI18N
         txtEstilo.setBorder(null);
         bg.add(txtEstilo, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 370, 160, 30));
@@ -148,7 +148,7 @@ public class Modificar2 extends javax.swing.JPanel {
         lblEstilo.setText("Estilo");
         bg.add(lblEstilo, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 350, 160, 20));
 
-        txtAño.setBackground(new java.awt.Color(225, 245, 254));
+        txtAño.setBackground(new java.awt.Color(234, 246, 255));
         txtAño.setFont(new java.awt.Font("Roboto Thin", 0, 18)); // NOI18N
         txtAño.setBorder(null);
         bg.add(txtAño, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 300, 160, 30));

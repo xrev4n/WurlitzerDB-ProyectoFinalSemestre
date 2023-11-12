@@ -76,16 +76,16 @@ public class Conectar extends javax.swing.JFrame {
     private void initComponents() {
 
         Agregar = new javax.swing.JPanel();
-        btnAgregar = new javax.swing.JButton();
-        bgTitle = new javax.swing.JPanel();
-        lblWulritzer = new javax.swing.JLabel();
-        btnEliminar = new javax.swing.JButton();
-        btnModificar = new javax.swing.JButton();
-        btnMostrar = new javax.swing.JButton();
-        btnSolicitar = new javax.swing.JButton();
         bg = new javax.swing.JPanel();
         btnConectar = new javax.swing.JButton();
         lblResultado = new javax.swing.JLabel();
+        btnAgregar = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
+        btnMostrar = new javax.swing.JButton();
+        btnModificar = new javax.swing.JButton();
+        btnSolicitar = new javax.swing.JButton();
+        bgTitle = new javax.swing.JPanel();
+        lblWulritzer = new javax.swing.JLabel();
         panelVentana = new javax.swing.JPanel();
         btnSalir = new javax.swing.JButton();
 
@@ -95,7 +95,7 @@ public class Conectar extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Agregar.setBackground(new java.awt.Color(225, 245, 254));
+        Agregar.setBackground(new java.awt.Color(234, 246, 255));
         Agregar.setForeground(new java.awt.Color(255, 255, 255));
         Agregar.setMaximumSize(new java.awt.Dimension(400, 600));
         Agregar.setMinimumSize(new java.awt.Dimension(400, 600));
@@ -114,6 +114,26 @@ public class Conectar extends javax.swing.JFrame {
 
         getContentPane().add(Agregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, 580, 570));
 
+        bg.setBackground(new java.awt.Color(36, 123, 160));
+
+        btnConectar.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        btnConectar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_conectar.png"))); // NOI18N
+        btnConectar.setBorder(null);
+        btnConectar.setBorderPainted(false);
+        btnConectar.setContentAreaFilled(false);
+        btnConectar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnConectar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_conectar_sel.png"))); // NOI18N
+        btnConectar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConectarActionPerformed(evt);
+            }
+        });
+
+        lblResultado.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        lblResultado.setForeground(new java.awt.Color(11, 19, 43));
+        lblResultado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblResultado.setText("Estado");
+
         btnAgregar.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         btnAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_agregar.png"))); // NOI18N
         btnAgregar.setBorder(null);
@@ -125,7 +145,52 @@ public class Conectar extends javax.swing.JFrame {
                 btnAgregarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 220, 50));
+
+        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_eliminar.png"))); // NOI18N
+        btnEliminar.setBorder(null);
+        btnEliminar.setContentAreaFilled(false);
+        btnEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEliminar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_eliminar_sel.png"))); // NOI18N
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
+
+        btnMostrar.setBackground(new java.awt.Color(60, 63, 65));
+        btnMostrar.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        btnMostrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_mostrar.png"))); // NOI18N
+        btnMostrar.setBorder(null);
+        btnMostrar.setContentAreaFilled(false);
+        btnMostrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnMostrar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_mostrar_sel.png"))); // NOI18N
+        btnMostrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMostrarActionPerformed(evt);
+            }
+        });
+
+        btnModificar.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        btnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_modificar.png"))); // NOI18N
+        btnModificar.setBorder(null);
+        btnModificar.setContentAreaFilled(false);
+        btnModificar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnModificar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_modificar_sel.png"))); // NOI18N
+        btnModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModificarActionPerformed(evt);
+            }
+        });
+
+        btnSolicitar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_solicitar.png"))); // NOI18N
+        btnSolicitar.setContentAreaFilled(false);
+        btnSolicitar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSolicitar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_solicitar_sel.png"))); // NOI18N
+        btnSolicitar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSolicitarActionPerformed(evt);
+            }
+        });
 
         bgTitle.setBackground(new java.awt.Color(28, 37, 65));
 
@@ -146,78 +211,6 @@ public class Conectar extends javax.swing.JFrame {
             .addComponent(lblWulritzer, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
         );
 
-        getContentPane().add(bgTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 220, 60));
-
-        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_eliminar.png"))); // NOI18N
-        btnEliminar.setBorder(null);
-        btnEliminar.setContentAreaFilled(false);
-        btnEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnEliminar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_eliminar_sel.png"))); // NOI18N
-        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminarActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 220, -1));
-
-        btnModificar.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        btnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_modificar.png"))); // NOI18N
-        btnModificar.setBorder(null);
-        btnModificar.setContentAreaFilled(false);
-        btnModificar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnModificar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_modificar_sel.png"))); // NOI18N
-        btnModificar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnModificarActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 220, 50));
-
-        btnMostrar.setBackground(new java.awt.Color(60, 63, 65));
-        btnMostrar.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        btnMostrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_mostrar.png"))); // NOI18N
-        btnMostrar.setBorder(null);
-        btnMostrar.setContentAreaFilled(false);
-        btnMostrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnMostrar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_mostrar_sel.png"))); // NOI18N
-        btnMostrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMostrarActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 220, 50));
-
-        btnSolicitar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_solicitar.png"))); // NOI18N
-        btnSolicitar.setContentAreaFilled(false);
-        btnSolicitar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnSolicitar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_solicitar_sel.png"))); // NOI18N
-        btnSolicitar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSolicitarActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnSolicitar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 220, -1));
-
-        bg.setBackground(new java.awt.Color(128, 216, 255));
-
-        btnConectar.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        btnConectar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_conectar.png"))); // NOI18N
-        btnConectar.setBorder(null);
-        btnConectar.setBorderPainted(false);
-        btnConectar.setContentAreaFilled(false);
-        btnConectar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnConectar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_conectar_sel.png"))); // NOI18N
-        btnConectar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnConectarActionPerformed(evt);
-            }
-        });
-
-        lblResultado.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        lblResultado.setForeground(new java.awt.Color(11, 19, 43));
-        lblResultado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblResultado.setText("Estado");
-
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
         bgLayout.setHorizontalGroup(
@@ -228,12 +221,33 @@ public class Conectar extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(lblResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(bgTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(lblResultado, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnMostrar, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnSolicitar, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))))
         );
         bgLayout.setVerticalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
-                .addContainerGap(497, Short.MAX_VALUE)
+                .addContainerGap(49, Short.MAX_VALUE)
+                .addComponent(bgTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(44, 44, 44)
+                .addComponent(btnAgregar)
+                .addGap(10, 10, 10)
+                .addComponent(btnEliminar)
+                .addGap(10, 10, 10)
+                .addComponent(btnMostrar)
+                .addGap(10, 10, 10)
+                .addComponent(btnModificar)
+                .addGap(10, 10, 10)
+                .addComponent(btnSolicitar)
+                .addGap(47, 47, 47)
                 .addComponent(lblResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnConectar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -242,7 +256,7 @@ public class Conectar extends javax.swing.JFrame {
 
         getContentPane().add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 220, 600));
 
-        panelVentana.setBackground(new java.awt.Color(225, 245, 254));
+        panelVentana.setBackground(new java.awt.Color(234, 246, 255));
         panelVentana.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 panelVentanaMouseDragged(evt);

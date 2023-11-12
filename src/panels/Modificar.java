@@ -53,7 +53,7 @@ public class Modificar extends javax.swing.JPanel {
         setBackground(new java.awt.Color(225, 245, 254));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Agregar.setBackground(new java.awt.Color(225, 245, 254));
+        Agregar.setBackground(new java.awt.Color(234, 246, 255));
 
         JListCanciones.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         JListCanciones.setModel(new javax.swing.AbstractListModel<String>() {
