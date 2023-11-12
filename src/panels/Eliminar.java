@@ -94,7 +94,7 @@ public class Eliminar extends javax.swing.JPanel {
         lblEliminar.setText("Selecciona una canción");
         add(lblEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 574, 20));
 
-        lblResultado.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        lblResultado.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         lblResultado.setForeground(new java.awt.Color(11, 19, 43));
         add(lblResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 86, 440, 30));
     }// </editor-fold>//GEN-END:initComponents
