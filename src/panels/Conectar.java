@@ -129,8 +129,8 @@ public class Conectar extends javax.swing.JFrame {
             }
         });
 
-        lblResultado.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        lblResultado.setForeground(new java.awt.Color(11, 19, 43));
+        lblResultado.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
+        lblResultado.setForeground(new java.awt.Color(255, 255, 255));
         lblResultado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblResultado.setText("Estado");
 
@@ -198,7 +198,7 @@ public class Conectar extends javax.swing.JFrame {
         lblWulritzer.setFont(new java.awt.Font("Roboto Black", 1, 27)); // NOI18N
         lblWulritzer.setForeground(new java.awt.Color(255, 255, 255));
         lblWulritzer.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblWulritzer.setText("WULRITZER DB");
+        lblWulritzer.setText("WURLITZER DB");
 
         javax.swing.GroupLayout bgTitleLayout = new javax.swing.GroupLayout(bgTitle);
         bgTitle.setLayout(bgTitleLayout);

@@ -94,6 +94,7 @@ public class MostrarPanel extends javax.swing.JPanel {
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 560, 390));
 
         lblMostrar.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
+        lblMostrar.setForeground(new java.awt.Color(11, 19, 43));
         lblMostrar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblMostrar.setText("Lista de Canciones");
         add(lblMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 580, 40));

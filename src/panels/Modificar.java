@@ -90,6 +90,7 @@ public class Modificar extends javax.swing.JPanel {
         });
 
         lblModificar.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
+        lblModificar.setForeground(new java.awt.Color(11, 19, 43));
         lblModificar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblModificar.setText("Selecciona una canción");
 

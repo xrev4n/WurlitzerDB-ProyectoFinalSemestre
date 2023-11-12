@@ -62,7 +62,7 @@ public class Solicitar extends javax.swing.JPanel {
         bg.setBackground(new java.awt.Color(234, 246, 255));
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        txtNombre.setBackground(new java.awt.Color(225, 245, 254));
+        txtNombre.setBackground(new java.awt.Color(234, 246, 255));
         txtNombre.setFont(new java.awt.Font("Roboto Thin", 0, 18)); // NOI18N
         txtNombre.setBorder(null);
         bg.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 410, 210, 30));
@@ -70,7 +70,7 @@ public class Solicitar extends javax.swing.JPanel {
         lblResultado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         bg.add(lblResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 450, 580, 20));
 
-        txtEscuela.setBackground(new java.awt.Color(225, 245, 254));
+        txtEscuela.setBackground(new java.awt.Color(234, 246, 255));
         txtEscuela.setFont(new java.awt.Font("Roboto Thin", 0, 18)); // NOI18N
         txtEscuela.setBorder(null);
         txtEscuela.addActionListener(new java.awt.event.ActionListener() {
@@ -117,9 +117,10 @@ public class Solicitar extends javax.swing.JPanel {
         bg.add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 500, 200, 50));
 
         lblAgregarCanciones.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
+        lblAgregarCanciones.setForeground(new java.awt.Color(11, 19, 43));
         lblAgregarCanciones.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblAgregarCanciones.setText("Solicitar canción");
-        bg.add(lblAgregarCanciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 580, 30));
+        bg.add(lblAgregarCanciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 580, 30));
 
         JListCanciones.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };

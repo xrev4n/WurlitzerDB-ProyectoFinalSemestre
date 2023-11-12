@@ -80,6 +80,7 @@ public class Eliminar extends javax.swing.JPanel {
         lblResultado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         lblEliminar.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
+        lblEliminar.setForeground(new java.awt.Color(11, 19, 43));
         lblEliminar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblEliminar.setText("Selecciona una canción");
 

@@ -200,17 +200,20 @@ public class Modificar2 extends javax.swing.JPanel {
         bg.add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 500, 200, 50));
 
         lblModificarCanciones.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
+        lblModificarCanciones.setForeground(new java.awt.Color(11, 19, 43));
         lblModificarCanciones.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblModificarCanciones.setText("Modificar Canción");
         bg.add(lblModificarCanciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 580, 40));
         bg.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 260, 160, 10));
 
         lblCancionSel.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        lblCancionSel.setForeground(new java.awt.Color(11, 19, 43));
         lblCancionSel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblCancionSel.setText("Cancion Seleccionada");
         bg.add(lblCancionSel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 580, 40));
 
-        lblResultado.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        lblResultado.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
+        lblResultado.setForeground(new java.awt.Color(11, 19, 43));
         lblResultado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblResultado.setText("RESULTADO");
         bg.add(lblResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 450, 580, -1));
