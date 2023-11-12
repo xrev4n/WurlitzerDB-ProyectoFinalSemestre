@@ -120,7 +120,7 @@ public class Solicitar extends javax.swing.JPanel {
         lblAgregarCanciones.setForeground(new java.awt.Color(11, 19, 43));
         lblAgregarCanciones.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblAgregarCanciones.setText("Solicitar canción");
-        bg.add(lblAgregarCanciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 580, 30));
+        bg.add(lblAgregarCanciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 580, 20));
 
         JListCanciones.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };

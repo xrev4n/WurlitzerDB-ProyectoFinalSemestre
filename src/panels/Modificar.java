@@ -54,7 +54,6 @@ public class Modificar extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Agregar.setBackground(new java.awt.Color(234, 246, 255));
-        Agregar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         JListCanciones.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         JListCanciones.setModel(new javax.swing.AbstractListModel<String>() {
@@ -65,8 +64,6 @@ public class Modificar extends javax.swing.JPanel {
         JListCanciones.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         JListCanciones.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jScrollPane1.setViewportView(JListCanciones);
-
-        Agregar.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 480, 360));
 
         btnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_modificar.png"))); // NOI18N
         btnModificar.setBorder(null);
@@ -79,7 +76,6 @@ public class Modificar extends javax.swing.JPanel {
                 btnModificarActionPerformed(evt);
             }
         });
-        Agregar.add(btnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 500, -1, -1));
 
         btnMostrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/refresh.png"))); // NOI18N
         btnMostrar.setBorder(null);
@@ -92,13 +88,39 @@ public class Modificar extends javax.swing.JPanel {
                 btnMostrarActionPerformed(evt);
             }
         });
-        Agregar.add(btnMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 90, -1, -1));
 
         lblModificar.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
         lblModificar.setForeground(new java.awt.Color(11, 19, 43));
         lblModificar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblModificar.setText("Selecciona una canción");
-        Agregar.add(lblModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 574, 20));
+
+        javax.swing.GroupLayout AgregarLayout = new javax.swing.GroupLayout(Agregar);
+        Agregar.setLayout(AgregarLayout);
+        AgregarLayout.setHorizontalGroup(
+            AgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 574, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(AgregarLayout.createSequentialGroup()
+                .addGap(500, 500, 500)
+                .addComponent(btnMostrar))
+            .addGroup(AgregarLayout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(AgregarLayout.createSequentialGroup()
+                .addGap(180, 180, 180)
+                .addComponent(btnModificar))
+        );
+        AgregarLayout.setVerticalGroup(
+            AgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AgregarLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(lblModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(btnMostrar)
+                .addGap(6, 6, 6)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addComponent(btnModificar))
+        );
 
         add(Agregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, 590));
     }// </editor-fold>//GEN-END:initComponents
@@ -148,14 +170,15 @@ public class Modificar extends javax.swing.JPanel {
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
         // TODO add your handling code here:
         //Cambia a panel Modificar2
-        Modificar2 agPn = new Modificar2();
-        agPn.setSize(580, 570);
-        agPn.setLocation(0, 0);
+        Modificar2 mosPn = new Modificar2();
+        mosPn.setSize(580, 570);
+        mosPn.setLocation(0, 0);
 
         Agregar.removeAll();
-        Agregar.add(agPn, BorderLayout.CENTER);
+        Agregar.add(mosPn);  // No se especifica restricción, ya que usas diseño absoluto
         Agregar.revalidate();
         Agregar.repaint();
+
 
     }//GEN-LAST:event_btnModificarActionPerformed
     private void LlenarJList() {
