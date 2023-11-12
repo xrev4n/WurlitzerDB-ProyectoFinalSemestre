@@ -203,7 +203,7 @@ public class AgregarPanel extends javax.swing.JPanel {
         lblAgregarCanciones.setForeground(new java.awt.Color(11, 19, 43));
         lblAgregarCanciones.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblAgregarCanciones.setText("Agregar Canciones");
-        bg.add(lblAgregarCanciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 580, 40));
+        bg.add(lblAgregarCanciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 580, 30));
 
         add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 610));
     }// </editor-fold>//GEN-END:initComponents

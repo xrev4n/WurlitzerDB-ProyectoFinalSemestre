@@ -49,17 +49,17 @@ public class MostrarPanel extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(600, 580));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnMostrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_mostrar.png"))); // NOI18N
+        btnMostrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/refresh.png"))); // NOI18N
         btnMostrar.setBorderPainted(false);
         btnMostrar.setContentAreaFilled(false);
         btnMostrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnMostrar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_mostrar_sel.png"))); // NOI18N
+        btnMostrar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/refresh _sel.png"))); // NOI18N
         btnMostrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMostrarActionPerformed(evt);
             }
         });
-        add(btnMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 490, 200, -1));
+        add(btnMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 80, 30, 30));
 
         jTable1.setAutoCreateRowSorter(true);
         jTable1.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
@@ -91,13 +91,13 @@ public class MostrarPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 560, 390));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 560, 390));
 
         lblMostrar.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
         lblMostrar.setForeground(new java.awt.Color(11, 19, 43));
         lblMostrar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblMostrar.setText("Lista de Canciones");
-        add(lblMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 580, 40));
+        add(lblMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 580, 20));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarActionPerformed

@@ -54,6 +54,7 @@ public class Modificar extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Agregar.setBackground(new java.awt.Color(234, 246, 255));
+        Agregar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         JListCanciones.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         JListCanciones.setModel(new javax.swing.AbstractListModel<String>() {
@@ -64,6 +65,8 @@ public class Modificar extends javax.swing.JPanel {
         JListCanciones.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         JListCanciones.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jScrollPane1.setViewportView(JListCanciones);
+
+        Agregar.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 480, 360));
 
         btnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_modificar.png"))); // NOI18N
         btnModificar.setBorder(null);
@@ -76,54 +79,26 @@ public class Modificar extends javax.swing.JPanel {
                 btnModificarActionPerformed(evt);
             }
         });
+        Agregar.add(btnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 500, -1, -1));
 
-        btnMostrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_mostrar.png"))); // NOI18N
+        btnMostrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/refresh.png"))); // NOI18N
         btnMostrar.setBorder(null);
         btnMostrar.setBorderPainted(false);
         btnMostrar.setContentAreaFilled(false);
         btnMostrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnMostrar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_mostrar_sel.png"))); // NOI18N
+        btnMostrar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/refresh _sel.png"))); // NOI18N
         btnMostrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMostrarActionPerformed(evt);
             }
         });
+        Agregar.add(btnMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 90, -1, -1));
 
         lblModificar.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
         lblModificar.setForeground(new java.awt.Color(11, 19, 43));
         lblModificar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblModificar.setText("Selecciona una canción");
-
-        javax.swing.GroupLayout AgregarLayout = new javax.swing.GroupLayout(Agregar);
-        Agregar.setLayout(AgregarLayout);
-        AgregarLayout.setHorizontalGroup(
-            AgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(AgregarLayout.createSequentialGroup()
-                .addGap(53, 53, 53)
-                .addGroup(AgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(AgregarLayout.createSequentialGroup()
-                        .addComponent(btnMostrar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnModificar))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 475, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(52, Short.MAX_VALUE))
-            .addGroup(AgregarLayout.createSequentialGroup()
-                .addComponent(lblModificar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        AgregarLayout.setVerticalGroup(
-            AgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(AgregarLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 406, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(AgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnMostrar)
-                    .addComponent(btnModificar))
-                .addContainerGap(52, Short.MAX_VALUE))
-        );
+        Agregar.add(lblModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 574, 20));
 
         add(Agregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, 590));
     }// </editor-fold>//GEN-END:initComponents
