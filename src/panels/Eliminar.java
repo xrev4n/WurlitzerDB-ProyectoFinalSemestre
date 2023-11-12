@@ -18,8 +18,10 @@ import javax.swing.JList;
  * @author felip
  */
 public class Eliminar extends javax.swing.JPanel {
+
     ArrayList<Cancion> listaCanciones = new ArrayList<>();
     private DefaultListModel<String> listModelJList;
+
     /**
      * Creates new form ModificarPanel
      */
@@ -41,7 +43,7 @@ public class Eliminar extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         JListCanciones = new javax.swing.JList<>();
         btnEliminar = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btnRecargar = new javax.swing.JButton();
         lblResultado = new javax.swing.JLabel();
         lblEliminar = new javax.swing.JLabel();
 
@@ -66,20 +68,25 @@ public class Eliminar extends javax.swing.JPanel {
         btnEliminar.setContentAreaFilled(false);
         btnEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnEliminar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_eliminar_sel.png"))); // NOI18N
-        add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 500, -1, -1));
-
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/refresh.png"))); // NOI18N
-        jButton1.setBorder(null);
-        jButton1.setBorderPainted(false);
-        jButton1.setContentAreaFilled(false);
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/refresh _sel.png"))); // NOI18N
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnEliminarActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 90, -1, -1));
+        add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 500, -1, -1));
+
+        btnRecargar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/refresh.png"))); // NOI18N
+        btnRecargar.setBorder(null);
+        btnRecargar.setBorderPainted(false);
+        btnRecargar.setContentAreaFilled(false);
+        btnRecargar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnRecargar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/refresh _sel.png"))); // NOI18N
+        btnRecargar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRecargarActionPerformed(evt);
+            }
+        });
+        add(btnRecargar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 90, -1, -1));
 
         lblResultado.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
         lblResultado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -92,47 +99,30 @@ public class Eliminar extends javax.swing.JPanel {
         add(lblEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 574, 20));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnRecargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecargarActionPerformed
         // TODO add your handling code here:
-        listaCanciones.clear();
-        try {
-            String url = "jdbc:mysql://localhost:3306/wurlitzerdb";
-            String usuario = "root";
-            String contraseña = "";
+        cargarLista();
 
-            Connection conexion = DriverManager.getConnection(url, usuario, contraseña);
+    }//GEN-LAST:event_btnRecargarActionPerformed
 
-            String sql = "SELECT * FROM cancion";
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        // TODO add your handling code here:
+        // Obtener el índice seleccionado en la JList
+        int selectedIndex = JListCanciones.getSelectedIndex();
 
-            try (PreparedStatement preparedStatement = conexion.prepareStatement(sql)) {
-                ResultSet resultSet = preparedStatement.executeQuery();
+        if (selectedIndex != -1) { // Verificar si se ha seleccionado un elemento
+            // Obtener el formato del elemento seleccionado (ID.NOMBRE.AUTOR.DISCO.AÑO)
+            String selectedItemFormat = listModelJList.getElementAt(selectedIndex);
 
-                while (resultSet.next()) {
-                    Cancion cancion = new Cancion(
-                            resultSet.getInt("id_cancion"),
-                            resultSet.getString("titulo"),
-                            resultSet.getString("autor"),
-                            resultSet.getString("disco"),
-                            resultSet.getInt("año"),
-                            resultSet.getInt("duracion_minuto"),
-                            resultSet.getInt("duracion_segundo"),
-                            resultSet.getString("estilo")
-                    );
+            // Obtener el ID del elemento seleccionado
+            int selectedId = Integer.parseInt(selectedItemFormat.split("\\.")[0]);
 
-                    listaCanciones.add(cancion);
-                }
-
-                // Llenar tanto la JList como la JTable
-                LlenarJList();
-
-            }
-
-            conexion.close();
-
-        } catch (SQLException e) {
-            e.printStackTrace();
+            // Eliminar el elemento de la base de datos
+            eliminarCancion(selectedId);
+            //Recargar lista
+            cargarLista();
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnEliminarActionPerformed
     private void LlenarJList() {
         listModelJList.clear(); // Limpiar el modelo del JList
 
@@ -150,10 +140,64 @@ public class Eliminar extends javax.swing.JPanel {
         JListCanciones.setModel(listModelJList); // Actualizar el JList con el nuevo modelo
     }
 
+    private void eliminarCancion(int idCancion) {
+        try {
+            String url = "jdbc:mysql://localhost:3306/wurlitzerdb";
+            String usuario = "root";
+            String contraseña = "";
+
+            try (Connection conexion = DriverManager.getConnection(url, usuario, contraseña)) {
+                String sql = "DELETE FROM cancion WHERE id_cancion = ?";
+
+                try (PreparedStatement preparedStatement = conexion.prepareStatement(sql)) {
+                    // Establecer el ID a eliminar
+                    preparedStatement.setInt(1, idCancion);
+
+                    // Ejecutar la consulta de eliminación
+                    preparedStatement.executeUpdate();
+                }
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void cargarLista() {
+        listaCanciones.clear();
+        try {
+            String url = "jdbc:mysql://localhost:3306/wurlitzerdb";
+            String usuario = "root";
+            String contraseña = "";
+            Connection conexion = DriverManager.getConnection(url, usuario, contraseña);
+            String sql = "SELECT * FROM cancion";
+            try (PreparedStatement preparedStatement = conexion.prepareStatement(sql)) {
+                ResultSet resultSet = preparedStatement.executeQuery();
+                while (resultSet.next()) {
+                    Cancion cancion = new Cancion(
+                            resultSet.getInt("id_cancion"),
+                            resultSet.getString("titulo"),
+                            resultSet.getString("autor"),
+                            resultSet.getString("disco"),
+                            resultSet.getInt("año"),
+                            resultSet.getInt("duracion_minuto"),
+                            resultSet.getInt("duracion_segundo"),
+                            resultSet.getString("estilo")
+                    );
+                    listaCanciones.add(cancion);
+                }
+                // Llenar tanto la JList como la JTable
+                LlenarJList();
+            }
+            conexion.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JList<String> JListCanciones;
     private javax.swing.JButton btnEliminar;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnRecargar;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblEliminar;
     private javax.swing.JLabel lblResultado;
