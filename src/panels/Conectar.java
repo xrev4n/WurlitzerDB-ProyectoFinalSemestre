@@ -364,7 +364,7 @@ public class Conectar extends javax.swing.JFrame {
 
     private void btnSolicitarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSolicitarActionPerformed
         // TODO add your handling code here:
-        Solicitar1 agPn = new Solicitar1();
+        Solicitar agPn = new Solicitar();
         agPn.setSize(580, 570);
         agPn.setLocation(0, 0);
 

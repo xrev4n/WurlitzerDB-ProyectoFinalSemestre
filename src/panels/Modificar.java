@@ -47,7 +47,7 @@ public class Modificar extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         JListCanciones = new javax.swing.JList<>();
         btnModificar = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btnMostrar = new javax.swing.JButton();
         lblModificar = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(225, 245, 254));
@@ -77,15 +77,15 @@ public class Modificar extends javax.swing.JPanel {
             }
         });
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_mostrar.png"))); // NOI18N
-        jButton1.setBorder(null);
-        jButton1.setBorderPainted(false);
-        jButton1.setContentAreaFilled(false);
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_mostrar_sel.png"))); // NOI18N
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnMostrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_mostrar.png"))); // NOI18N
+        btnMostrar.setBorder(null);
+        btnMostrar.setBorderPainted(false);
+        btnMostrar.setContentAreaFilled(false);
+        btnMostrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnMostrar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_mostrar_sel.png"))); // NOI18N
+        btnMostrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnMostrarActionPerformed(evt);
             }
         });
 
@@ -101,7 +101,7 @@ public class Modificar extends javax.swing.JPanel {
                 .addGap(53, 53, 53)
                 .addGroup(AgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(AgregarLayout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(btnMostrar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnModificar))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 475, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -119,7 +119,7 @@ public class Modificar extends javax.swing.JPanel {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 406, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(AgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
+                    .addComponent(btnMostrar)
                     .addComponent(btnModificar))
                 .addContainerGap(52, Short.MAX_VALUE))
         );
@@ -127,7 +127,7 @@ public class Modificar extends javax.swing.JPanel {
         add(Agregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, 590));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarActionPerformed
         // TODO add your handling code here:
         listaCanciones.clear();
         try {
@@ -167,10 +167,11 @@ public class Modificar extends javax.swing.JPanel {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnMostrarActionPerformed
 
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
         // TODO add your handling code here:
+        //Cambia a panel Modificar2
         Modificar2 agPn = new Modificar2();
         agPn.setSize(580, 570);
         agPn.setLocation(0, 0);
@@ -202,7 +203,7 @@ public class Modificar extends javax.swing.JPanel {
     private javax.swing.JPanel Agregar;
     private javax.swing.JList<String> JListCanciones;
     private javax.swing.JButton btnModificar;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnMostrar;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblModificar;
     // End of variables declaration//GEN-END:variables
