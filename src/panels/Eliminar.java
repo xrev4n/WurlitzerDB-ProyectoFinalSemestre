@@ -92,7 +92,7 @@ public class Eliminar extends javax.swing.JPanel {
         lblEliminar.setForeground(new java.awt.Color(11, 19, 43));
         lblEliminar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblEliminar.setText("Selecciona una canción");
-        add(lblEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 574, 20));
+        add(lblEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 574, 30));
 
         lblResultado.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         lblResultado.setForeground(new java.awt.Color(11, 19, 43));
@@ -109,8 +109,8 @@ public class Eliminar extends javax.swing.JPanel {
         // TODO add your handling code here:
         // Obtener el índice seleccionado en la JList
         int selectedIndex = JListCanciones.getSelectedIndex();
-
-        if (selectedIndex != -1) { // Verificar si se ha seleccionado un elemento
+        // Verificar si se ha seleccionado un elemento
+        if (selectedIndex != -1) {
             // Obtener el formato del elemento seleccionado (ID.NOMBRE.AUTOR.DISCO.AÑO)
             String selectedItemFormat = listModelJList.getElementAt(selectedIndex);
 
@@ -123,8 +123,7 @@ public class Eliminar extends javax.swing.JPanel {
             cargarLista();
             //Mensaje eliminacion exitosa
             lblResultado.setText("¡Canción eliminada exitosamente!");
-        }
-        else{
+        } else {
             lblResultado.setText("Debes seleccionar una canción primero");
         }
     }//GEN-LAST:event_btnEliminarActionPerformed
@@ -191,7 +190,7 @@ public class Eliminar extends javax.swing.JPanel {
                     );
                     listaCanciones.add(cancion);
                 }
-                // Llenar tanto la JList como la JTable
+                // Llenar la JList
                 LlenarJList();
             }
             conexion.close();
