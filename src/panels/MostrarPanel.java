@@ -6,6 +6,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import javax.swing.DefaultListModel;
+import javax.swing.JList;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -40,8 +42,9 @@ public class MostrarPanel extends javax.swing.JPanel {
         btnMostrar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        lblMostrar = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(225, 245, 254));
         setForeground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(600, 580));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -56,8 +59,10 @@ public class MostrarPanel extends javax.swing.JPanel {
                 btnMostrarActionPerformed(evt);
             }
         });
-        add(btnMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 480, -1, -1));
+        add(btnMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 490, 200, -1));
 
+        jTable1.setAutoCreateRowSorter(true);
+        jTable1.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null},
@@ -86,11 +91,17 @@ public class MostrarPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, -1, -1));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 560, 390));
+
+        lblMostrar.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
+        lblMostrar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblMostrar.setText("Lista de Canciones");
+        add(lblMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 580, 40));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarActionPerformed
         // TODO add your handling code here:
+        listaCanciones.clear();
         try {
             // Configuración de la conexión a la base de datos
             String url = "jdbc:mysql://localhost:3306/wurlitzerdb";
@@ -124,6 +135,7 @@ public class MostrarPanel extends javax.swing.JPanel {
 
                 }
                 LlenarTabla();
+                
             }
 
             // Cerrar la conexión
@@ -159,5 +171,6 @@ public class MostrarPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnMostrar;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JLabel lblMostrar;
     // End of variables declaration//GEN-END:variables
 }

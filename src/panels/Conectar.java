@@ -75,8 +75,6 @@ public class Conectar extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnConectar = new javax.swing.JButton();
-        lblResultado = new javax.swing.JLabel();
         Agregar = new javax.swing.JPanel();
         btnAgregar = new javax.swing.JButton();
         bgTitle = new javax.swing.JPanel();
@@ -85,7 +83,9 @@ public class Conectar extends javax.swing.JFrame {
         btnModificar = new javax.swing.JButton();
         btnMostrar = new javax.swing.JButton();
         btnSolicitar = new javax.swing.JButton();
-        background = new javax.swing.JLabel();
+        bg = new javax.swing.JPanel();
+        btnConectar = new javax.swing.JButton();
+        lblResultado = new javax.swing.JLabel();
         panelVentana = new javax.swing.JPanel();
         btnSalir = new javax.swing.JButton();
 
@@ -95,27 +95,7 @@ public class Conectar extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnConectar.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        btnConectar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_conectar.png"))); // NOI18N
-        btnConectar.setBorder(null);
-        btnConectar.setBorderPainted(false);
-        btnConectar.setContentAreaFilled(false);
-        btnConectar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnConectar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_conectar_sel.png"))); // NOI18N
-        btnConectar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnConectarActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnConectar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 550, 220, 40));
-
-        lblResultado.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        lblResultado.setForeground(new java.awt.Color(11, 19, 43));
-        lblResultado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblResultado.setText("Estado");
-        getContentPane().add(lblResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 505, 220, 30));
-
-        Agregar.setBackground(new java.awt.Color(255, 255, 255));
+        Agregar.setBackground(new java.awt.Color(225, 245, 254));
         Agregar.setForeground(new java.awt.Color(255, 255, 255));
         Agregar.setMaximumSize(new java.awt.Dimension(400, 600));
         Agregar.setMinimumSize(new java.awt.Dimension(400, 600));
@@ -149,26 +129,21 @@ public class Conectar extends javax.swing.JFrame {
 
         bgTitle.setBackground(new java.awt.Color(28, 37, 65));
 
-        lblWulritzer.setBackground(new java.awt.Color(0, 0, 102));
-        lblWulritzer.setFont(new java.awt.Font("Roboto", 0, 27)); // NOI18N
+        lblWulritzer.setBackground(new java.awt.Color(28, 37, 65));
+        lblWulritzer.setFont(new java.awt.Font("Roboto Black", 1, 27)); // NOI18N
         lblWulritzer.setForeground(new java.awt.Color(255, 255, 255));
+        lblWulritzer.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblWulritzer.setText("WULRITZER DB");
 
         javax.swing.GroupLayout bgTitleLayout = new javax.swing.GroupLayout(bgTitle);
         bgTitle.setLayout(bgTitleLayout);
         bgTitleLayout.setHorizontalGroup(
             bgTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgTitleLayout.createSequentialGroup()
-                .addContainerGap(18, Short.MAX_VALUE)
-                .addComponent(lblWulritzer)
-                .addGap(15, 15, 15))
+            .addComponent(lblWulritzer, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
         );
         bgTitleLayout.setVerticalGroup(
             bgTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgTitleLayout.createSequentialGroup()
-                .addContainerGap(22, Short.MAX_VALUE)
-                .addComponent(lblWulritzer)
-                .addContainerGap())
+            .addComponent(lblWulritzer, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
         );
 
         getContentPane().add(bgTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 220, 60));
@@ -223,10 +198,51 @@ public class Conectar extends javax.swing.JFrame {
         });
         getContentPane().add(btnSolicitar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 220, -1));
 
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/background.png"))); // NOI18N
-        getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 220, 600));
+        bg.setBackground(new java.awt.Color(128, 216, 255));
 
-        panelVentana.setBackground(new java.awt.Color(255, 255, 255));
+        btnConectar.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        btnConectar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_conectar.png"))); // NOI18N
+        btnConectar.setBorder(null);
+        btnConectar.setBorderPainted(false);
+        btnConectar.setContentAreaFilled(false);
+        btnConectar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnConectar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_conectar_sel.png"))); // NOI18N
+        btnConectar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConectarActionPerformed(evt);
+            }
+        });
+
+        lblResultado.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        lblResultado.setForeground(new java.awt.Color(11, 19, 43));
+        lblResultado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblResultado.setText("Estado");
+
+        javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
+        bg.setLayout(bgLayout);
+        bgLayout.setHorizontalGroup(
+            bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bgLayout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(btnConectar)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lblResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        bgLayout.setVerticalGroup(
+            bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
+                .addContainerGap(497, Short.MAX_VALUE)
+                .addComponent(lblResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnConectar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27))
+        );
+
+        getContentPane().add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 220, 600));
+
+        panelVentana.setBackground(new java.awt.Color(225, 245, 254));
         panelVentana.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 panelVentanaMouseDragged(evt);
@@ -291,7 +307,7 @@ public class Conectar extends javax.swing.JFrame {
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
         // TODO add your handling code here:
 
-        Modificar1 moPn = new Modificar1();
+        Modificar moPn = new Modificar();
         moPn.setSize(580, 570);
         moPn.setLocation(0, 0);
 
@@ -336,7 +352,7 @@ public class Conectar extends javax.swing.JFrame {
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         // TODO add your handling code here:
-        Eliminar1 agPn = new Eliminar1();
+        Eliminar agPn = new Eliminar();
         agPn.setSize(580, 570);
         agPn.setLocation(0, 0);
 
@@ -396,7 +412,7 @@ public class Conectar extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Agregar;
-    private javax.swing.JLabel background;
+    private javax.swing.JPanel bg;
     private javax.swing.JPanel bgTitle;
     private javax.swing.JButton btnAgregar;
     private javax.swing.JButton btnConectar;

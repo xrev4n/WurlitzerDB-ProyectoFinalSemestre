@@ -64,61 +64,64 @@ public class AgregarPanel extends javax.swing.JPanel {
         jSeparator8 = new javax.swing.JSeparator();
         btnEnviar = new javax.swing.JButton();
         btnLimpiar = new javax.swing.JButton();
+        lblAgregarCanciones = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(600, 580));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        bg.setBackground(new java.awt.Color(255, 255, 255));
+        bg.setBackground(new java.awt.Color(225, 245, 254));
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblAutor.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        lblAutor.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         lblAutor.setForeground(new java.awt.Color(11, 19, 43));
         lblAutor.setText("Autor");
-        bg.add(lblAutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 150, 30));
+        bg.add(lblAutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 150, 20));
 
-        lblTitulo.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        lblTitulo.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         lblTitulo.setForeground(new java.awt.Color(11, 19, 43));
         lblTitulo.setText("Titulo");
-        bg.add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 150, 20));
+        bg.add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 150, 20));
 
-        txtTitulo.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
-        txtTitulo.setForeground(new java.awt.Color(11, 19, 43));
+        txtTitulo.setBackground(new java.awt.Color(225, 245, 254));
+        txtTitulo.setFont(new java.awt.Font("Roboto Thin", 0, 18)); // NOI18N
         txtTitulo.setBorder(null);
-        bg.add(txtTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 150, 30));
+        bg.add(txtTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 150, 30));
 
-        txtDisco.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
-        txtDisco.setForeground(new java.awt.Color(11, 19, 43));
+        txtDisco.setBackground(new java.awt.Color(225, 245, 254));
+        txtDisco.setFont(new java.awt.Font("Roboto Thin", 0, 18)); // NOI18N
         txtDisco.setBorder(null);
-        bg.add(txtDisco, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, 160, 30));
+        bg.add(txtDisco, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 150, 160, 30));
 
-        txtDuracionSeg.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
-        txtDuracionSeg.setForeground(new java.awt.Color(11, 19, 43));
+        txtDuracionSeg.setBackground(new java.awt.Color(225, 245, 254));
+        txtDuracionSeg.setFont(new java.awt.Font("Roboto Thin", 0, 18)); // NOI18N
         txtDuracionSeg.setBorder(null);
         bg.add(txtDuracionSeg, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 150, 30));
 
-        lblID.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        lblID.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         lblID.setForeground(new java.awt.Color(11, 19, 43));
         lblID.setText("ID");
-        bg.add(lblID, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 20, 160, 20));
+        bg.add(lblID, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 60, 160, 20));
 
-        txtID.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
-        txtID.setForeground(new java.awt.Color(11, 19, 43));
+        txtID.setBackground(new java.awt.Color(225, 245, 254));
+        txtID.setFont(new java.awt.Font("Roboto Thin", 0, 18)); // NOI18N
         txtID.setBorder(null);
         txtID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtIDActionPerformed(evt);
             }
         });
-        bg.add(txtID, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 50, 160, 30));
-        bg.add(lblResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 480, 150, 20));
+        bg.add(txtID, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 80, 160, 30));
 
-        txtAutor.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
-        txtAutor.setForeground(new java.awt.Color(11, 19, 43));
+        lblResultado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        bg.add(lblResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 460, 580, 20));
+
+        txtAutor.setBackground(new java.awt.Color(225, 245, 254));
+        txtAutor.setFont(new java.awt.Font("Roboto Thin", 0, 18)); // NOI18N
         txtAutor.setBorder(null);
-        bg.add(txtAutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 150, 30));
+        bg.add(txtAutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 150, 30));
 
-        txtDuracionMin.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
-        txtDuracionMin.setForeground(new java.awt.Color(11, 19, 43));
+        txtDuracionMin.setBackground(new java.awt.Color(225, 245, 254));
+        txtDuracionMin.setFont(new java.awt.Font("Roboto Thin", 0, 18)); // NOI18N
         txtDuracionMin.setBorder(null);
         txtDuracionMin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -127,48 +130,48 @@ public class AgregarPanel extends javax.swing.JPanel {
         });
         bg.add(txtDuracionMin, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 150, 30));
 
-        lblDuracion.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        lblDuracion.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         lblDuracion.setForeground(new java.awt.Color(11, 19, 43));
         lblDuracion.setText("Duración(min.)");
-        bg.add(lblDuracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 250, 40));
+        bg.add(lblDuracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 160, 20));
 
-        txtEstilo.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
-        txtEstilo.setForeground(new java.awt.Color(11, 19, 43));
+        txtEstilo.setBackground(new java.awt.Color(225, 245, 254));
+        txtEstilo.setFont(new java.awt.Font("Roboto Thin", 0, 18)); // NOI18N
         txtEstilo.setBorder(null);
         bg.add(txtEstilo, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 290, 160, 30));
 
-        lblEstilo.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        lblEstilo.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         lblEstilo.setForeground(new java.awt.Color(11, 19, 43));
         lblEstilo.setText("Estilo");
-        bg.add(lblEstilo, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 250, 160, 30));
+        bg.add(lblEstilo, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 270, 160, 20));
 
-        txtAño.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
-        txtAño.setForeground(new java.awt.Color(11, 19, 43));
+        txtAño.setBackground(new java.awt.Color(225, 245, 254));
+        txtAño.setFont(new java.awt.Font("Roboto Thin", 0, 18)); // NOI18N
         txtAño.setBorder(null);
-        bg.add(txtAño, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 210, 160, 30));
+        bg.add(txtAño, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 220, 160, 30));
 
-        lblAño.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        lblAño.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         lblAño.setForeground(new java.awt.Color(11, 19, 43));
         lblAño.setText("Año");
-        bg.add(lblAño, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 170, 160, 30));
+        bg.add(lblAño, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 200, 50, 20));
 
-        lblDuracionSeg.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        lblDuracionSeg.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         lblDuracionSeg.setForeground(new java.awt.Color(11, 19, 43));
         lblDuracionSeg.setText("Duracion (seg.)");
-        bg.add(lblDuracionSeg, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 250, 30));
+        bg.add(lblDuracionSeg, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, 250, 20));
 
-        lblDisco.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        lblDisco.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         lblDisco.setForeground(new java.awt.Color(11, 19, 43));
         lblDisco.setText("Disco");
-        bg.add(lblDisco, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, 160, 30));
-        bg.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 80, 160, 10));
-        bg.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 150, 10));
-        bg.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 150, 10));
+        bg.add(lblDisco, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, 160, 20));
+        bg.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 110, 160, 10));
+        bg.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 150, 10));
+        bg.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 150, 10));
         bg.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 150, 10));
         bg.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 320, 160, 10));
         bg.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 150, 10));
-        bg.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 240, 160, 10));
-        bg.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 160, 160, 10));
+        bg.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 250, 160, 10));
+        bg.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 180, 160, 10));
 
         btnEnviar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_enviar.png"))); // NOI18N
         btnEnviar.setBorderPainted(false);
@@ -180,7 +183,7 @@ public class AgregarPanel extends javax.swing.JPanel {
                 btnEnviarActionPerformed(evt);
             }
         });
-        bg.add(btnEnviar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 510, -1, -1));
+        bg.add(btnEnviar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 500, 200, 50));
 
         btnLimpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_limpiar.png"))); // NOI18N
         btnLimpiar.setBorderPainted(false);
@@ -192,7 +195,12 @@ public class AgregarPanel extends javax.swing.JPanel {
                 btnLimpiarActionPerformed(evt);
             }
         });
-        bg.add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 510, -1, -1));
+        bg.add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 500, 200, 50));
+
+        lblAgregarCanciones.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
+        lblAgregarCanciones.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblAgregarCanciones.setText("Agregar Canciones");
+        bg.add(lblAgregarCanciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, 40));
 
         add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 610));
     }// </editor-fold>//GEN-END:initComponents
@@ -255,6 +263,7 @@ public class AgregarPanel extends javax.swing.JPanel {
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
+    private javax.swing.JLabel lblAgregarCanciones;
     private javax.swing.JLabel lblAutor;
     private javax.swing.JLabel lblAño;
     private javax.swing.JLabel lblDisco;
