@@ -115,7 +115,7 @@ public class AgregarPanel extends javax.swing.JPanel {
         lblResultado.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         lblResultado.setForeground(new java.awt.Color(11, 19, 43));
         lblResultado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        bg.add(lblResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 450, 580, 30));
+        bg.add(lblResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 410, 580, 30));
 
         txtAutor.setBackground(new java.awt.Color(234, 246, 255));
         txtAutor.setFont(new java.awt.Font("Roboto Thin", 0, 18)); // NOI18N
@@ -309,8 +309,6 @@ public class AgregarPanel extends javax.swing.JPanel {
 
             // Ejecutar la inserción
             preparedStatement.executeUpdate();
-
-            System.out.println("Canción insertada correctamente en la base de datos.");
         }
     }
 }

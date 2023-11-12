@@ -44,8 +44,8 @@ public class Eliminar extends javax.swing.JPanel {
         JListCanciones = new javax.swing.JList<>();
         btnEliminar = new javax.swing.JButton();
         btnRecargar = new javax.swing.JButton();
-        lblResultado = new javax.swing.JLabel();
         lblEliminar = new javax.swing.JLabel();
+        lblResultado = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(234, 246, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -88,15 +88,15 @@ public class Eliminar extends javax.swing.JPanel {
         });
         add(btnRecargar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 90, -1, -1));
 
-        lblResultado.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
-        lblResultado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        add(lblResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(261, 431, 65, 25));
-
         lblEliminar.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
         lblEliminar.setForeground(new java.awt.Color(11, 19, 43));
         lblEliminar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblEliminar.setText("Selecciona una canción");
         add(lblEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 574, 20));
+
+        lblResultado.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        lblResultado.setForeground(new java.awt.Color(11, 19, 43));
+        add(lblResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 86, 440, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRecargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecargarActionPerformed
@@ -121,6 +121,11 @@ public class Eliminar extends javax.swing.JPanel {
             eliminarCancion(selectedId);
             //Recargar lista
             cargarLista();
+            //Mensaje eliminacion exitosa
+            lblResultado.setText("¡Canción eliminada exitosamente!");
+        }
+        else{
+            lblResultado.setText("Debes seleccionar una canción primero");
         }
     }//GEN-LAST:event_btnEliminarActionPerformed
     private void LlenarJList() {
