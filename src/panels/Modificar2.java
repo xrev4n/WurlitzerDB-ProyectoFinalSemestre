@@ -227,6 +227,22 @@ public class Modificar2 extends javax.swing.JPanel {
 
     private void btnEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarActionPerformed
         // TODO add your handling code here:
+        // Obtén el ID de la canción desde el campo de texto
+        String idCancionTexto = txtID.getText();
+
+        if (!idCancionTexto.isEmpty()) {
+            try {
+                int idCancion = Integer.parseInt(idCancionTexto);
+
+                // Llama al método modificarCancion con el ID obtenido
+                modificarCancion(idCancion);
+            } catch (NumberFormatException e) {
+                System.out.println("Error al convertir el ID a un número entero.");
+            }
+        } else {
+            System.out.println("El campo de ID está vacío. Ingresa un ID válido.");
+        }
+
     }//GEN-LAST:event_btnEnviarActionPerformed
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
@@ -243,6 +259,7 @@ public class Modificar2 extends javax.swing.JPanel {
 
     private void txtIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIDActionPerformed
         // TODO add your handling code here:
+
     }//GEN-LAST:event_txtIDActionPerformed
 
     private void txtTituloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTituloActionPerformed
@@ -283,31 +300,63 @@ public class Modificar2 extends javax.swing.JPanel {
     private javax.swing.JTextField txtTitulo;
     // End of variables declaration//GEN-END:variables
 
-    public static void insertarCancionEnDB(Cancion cancion) throws SQLException {
-        // Configuración de la conexión a la base de datos
-        String url = "jdbc:mysql://localhost:3306/wurlitzerdb";
-        String usuario = "root";
-        String contraseña = "";
+    private void modificarCancion(int idCancion) {
+        try {
+            String url = "jdbc:mysql://localhost:3306/wurlitzerdb";
+            String usuario = "root";
+            String contraseña = "";
 
-        // Establecer la conexión
-        Connection conexion = DriverManager.getConnection(url, usuario, contraseña);
-        // Crear la sentencia SQL para la inserción
-        String sql = "INSERT INTO cancion (id_cancion, titulo, autor, disco, año, duracion_minuto, duracion_segundo, estilo) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-        try (PreparedStatement preparedStatement = conexion.prepareStatement(sql)) {
-            // Establecer los valores de los parámetros
-            preparedStatement.setInt(1, cancion.getId_cancion());
-            preparedStatement.setString(2, cancion.getTitulo());
-            preparedStatement.setString(3, cancion.getAutor());
-            preparedStatement.setString(4, cancion.getDisco());
-            preparedStatement.setInt(5, cancion.getAnio());
-            preparedStatement.setInt(6, cancion.getDuracion_minuto());
-            preparedStatement.setInt(7, cancion.getDuracion_segundo());
-            preparedStatement.setString(8, cancion.getEstilo());
+            try (Connection conexion = DriverManager.getConnection(url, usuario, contraseña)) {
+                String sql = "UPDATE cancion SET titulo=?, autor=?, disco=?, año=?, duracion_minuto=?, duracion_segundo=?, estilo=? WHERE id_cancion=?";
 
-            // Ejecutar la inserción
-            preparedStatement.executeUpdate();
+                try (PreparedStatement preparedStatement = conexion.prepareStatement(sql)) {
+                    // Obtener los valores de los JTextField
+                    String nuevoTitulo = txtTitulo.getText();
+                    String nuevoAutor = txtAutor.getText();
+                    String nuevoDisco = txtDisco.getText();
 
-            System.out.println("Canción insertada correctamente en la base de datos.");
+                    // Validar que el campo de texto no esté vacío antes de intentar convertirlo a un número
+                    int nuevoAnio = 0; // Valor por defecto
+                    if (!txtAño.getText().isEmpty()) {
+                        nuevoAnio = Integer.parseInt(txtAño.getText());
+                    }
+
+                    int nuevaDuracionMinuto = 0; // Valor por defecto
+                    if (!txtDuracionMin.getText().isEmpty()) {
+                        nuevaDuracionMinuto = Integer.parseInt(txtDuracionMin.getText());
+                    }
+
+                    int nuevaDuracionSegundo = 0; // Valor por defecto
+                    if (!txtDuracionSeg.getText().isEmpty()) {
+                        nuevaDuracionSegundo = Integer.parseInt(txtDuracionSeg.getText());
+                    }
+
+                    String nuevoEstilo = txtEstilo.getText();
+
+                    // Establecer los valores de los parámetros para la actualización
+                    preparedStatement.setString(1, nuevoTitulo);
+                    preparedStatement.setString(2, nuevoAutor);
+                    preparedStatement.setString(3, nuevoDisco);
+                    preparedStatement.setInt(4, nuevoAnio);
+                    preparedStatement.setInt(5, nuevaDuracionMinuto);
+                    preparedStatement.setInt(6, nuevaDuracionSegundo);
+                    preparedStatement.setString(7, nuevoEstilo);
+                    preparedStatement.setInt(8, idCancion);
+
+                    // Ejecutar la actualización
+                    int filasActualizadas = preparedStatement.executeUpdate();
+
+                    if (filasActualizadas > 0) {
+                        System.out.println("Canción actualizada correctamente en la base de datos.");
+                    } else {
+                        System.out.println("No se encontró ninguna canción con el ID proporcionado.");
+                    }
+                }
+            }
+
+        } catch (SQLException | NumberFormatException e) {
+            e.printStackTrace();
         }
     }
+
 }
