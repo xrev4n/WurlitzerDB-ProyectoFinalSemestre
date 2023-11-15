@@ -1,5 +1,8 @@
 package panels;
 
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Container;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -55,6 +58,8 @@ public class Solicitar extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         JListCanciones = new javax.swing.JList<>();
         btnRefresh = new javax.swing.JButton();
+        btnSolicitudes = new panels.PanelRound();
+        lblSolicitudes = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(600, 580));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -120,7 +125,7 @@ public class Solicitar extends javax.swing.JPanel {
         lblAgregarCanciones.setForeground(new java.awt.Color(11, 19, 43));
         lblAgregarCanciones.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblAgregarCanciones.setText("Solicitar canción");
-        bg.add(lblAgregarCanciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 580, 20));
+        bg.add(lblAgregarCanciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 580, 30));
 
         JListCanciones.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -129,7 +134,7 @@ public class Solicitar extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(JListCanciones);
 
-        bg.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 540, 260));
+        bg.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 540, 230));
 
         btnRefresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/refresh.png"))); // NOI18N
         btnRefresh.setContentAreaFilled(false);
@@ -140,7 +145,34 @@ public class Solicitar extends javax.swing.JPanel {
                 btnRefreshActionPerformed(evt);
             }
         });
-        bg.add(btnRefresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 70, 30, 30));
+        bg.add(btnRefresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 100, 30, 30));
+
+        btnSolicitudes.setBackground(new java.awt.Color(28, 37, 65));
+        btnSolicitudes.setRoundBottomLeft(50);
+        btnSolicitudes.setRoundBottomRight(50);
+        btnSolicitudes.setRoundTopLeft(50);
+        btnSolicitudes.setRoundTopRight(50);
+        btnSolicitudes.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblSolicitudes.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
+        lblSolicitudes.setForeground(new java.awt.Color(255, 255, 255));
+        lblSolicitudes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblSolicitudes.setText("Solicitudes");
+        lblSolicitudes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblSolicitudes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblSolicitudesMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblSolicitudesMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblSolicitudesMouseExited(evt);
+            }
+        });
+        btnSolicitudes.add(lblSolicitudes, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 1, 140, 40));
+
+        bg.add(btnSolicitudes, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 140, 40));
 
         add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 610));
     }// </editor-fold>//GEN-END:initComponents
@@ -200,6 +232,29 @@ public class Solicitar extends javax.swing.JPanel {
             e.printStackTrace();
         }
     }//GEN-LAST:event_btnRefreshActionPerformed
+
+    private void lblSolicitudesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSolicitudesMouseClicked
+        // TODO add your handling code here:
+        Solicitar2 solPn = new Solicitar2();
+        solPn.setSize(580, 570);
+        solPn.setLocation(0, 0);
+
+        Container contentPane = getParent();
+        contentPane.removeAll();
+        contentPane.add(solPn);
+        contentPane.revalidate();
+        contentPane.repaint();
+    }//GEN-LAST:event_lblSolicitudesMouseClicked
+
+    private void lblSolicitudesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSolicitudesMouseEntered
+        // TODO add your handling code here:
+        btnSolicitudes.setBackground(new Color(0x5BC0BE));
+    }//GEN-LAST:event_lblSolicitudesMouseEntered
+
+    private void lblSolicitudesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSolicitudesMouseExited
+        // TODO add your handling code here:
+        btnSolicitudes.setBackground(new Color(0x1C2541));
+    }//GEN-LAST:event_lblSolicitudesMouseExited
     private void LlenarJList() {
         listModelJList.clear(); // Limpiar el modelo del JList
 
@@ -224,6 +279,7 @@ public class Solicitar extends javax.swing.JPanel {
     private javax.swing.JButton btnEnviar;
     private javax.swing.JButton btnLimpiar;
     private javax.swing.JButton btnRefresh;
+    private panels.PanelRound btnSolicitudes;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
@@ -231,6 +287,7 @@ public class Solicitar extends javax.swing.JPanel {
     private javax.swing.JLabel lblEscuela;
     private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblResultado;
+    private javax.swing.JLabel lblSolicitudes;
     private javax.swing.JTextField txtEscuela;
     private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables

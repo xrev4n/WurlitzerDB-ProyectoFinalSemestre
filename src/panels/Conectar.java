@@ -1,6 +1,7 @@
 package panels;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.geom.RoundRectangle2D;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -53,7 +54,7 @@ public class Conectar extends javax.swing.JFrame {
     public Conectar() {
         initComponents();
 
-        AgregarPanel agPn = new AgregarPanel();
+        Reproduccion agPn = new Reproduccion();
         agPn.setSize(800, 600);
         agPn.setLocation(0, 0);
         this.setResizable(false);
@@ -77,15 +78,21 @@ public class Conectar extends javax.swing.JFrame {
 
         Agregar = new javax.swing.JPanel();
         bg = new javax.swing.JPanel();
-        btnConectar = new javax.swing.JButton();
         lblResultado = new javax.swing.JLabel();
-        btnAgregar = new javax.swing.JButton();
-        btnEliminar = new javax.swing.JButton();
-        btnMostrar = new javax.swing.JButton();
-        btnModificar = new javax.swing.JButton();
-        btnSolicitar = new javax.swing.JButton();
         bgTitle = new javax.swing.JPanel();
         lblWulritzer = new javax.swing.JLabel();
+        bgAgregar = new panels.PanelRound();
+        lblAgregar = new javax.swing.JLabel();
+        bgEliminar = new panels.PanelRound();
+        lblEliminar = new javax.swing.JLabel();
+        bgModificar = new panels.PanelRound();
+        lblModificar = new javax.swing.JLabel();
+        bgMostrar = new panels.PanelRound();
+        lblMostrar = new javax.swing.JLabel();
+        bgSolicitar = new panels.PanelRound();
+        lblSolicitar = new javax.swing.JLabel();
+        bgConectar = new panels.PanelRound();
+        lblConectar = new javax.swing.JLabel();
         panelVentana = new javax.swing.JPanel();
         btnSalir = new javax.swing.JButton();
         btnMinimizar = new javax.swing.JButton();
@@ -116,82 +123,13 @@ public class Conectar extends javax.swing.JFrame {
         getContentPane().add(Agregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, 580, 570));
 
         bg.setBackground(new java.awt.Color(36, 123, 160));
-
-        btnConectar.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        btnConectar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_conectar.png"))); // NOI18N
-        btnConectar.setBorder(null);
-        btnConectar.setBorderPainted(false);
-        btnConectar.setContentAreaFilled(false);
-        btnConectar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnConectar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_conectar_sel.png"))); // NOI18N
-        btnConectar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnConectarActionPerformed(evt);
-            }
-        });
+        bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblResultado.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         lblResultado.setForeground(new java.awt.Color(255, 255, 255));
         lblResultado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblResultado.setText("Estado");
-
-        btnAgregar.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        btnAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_agregar.png"))); // NOI18N
-        btnAgregar.setBorder(null);
-        btnAgregar.setContentAreaFilled(false);
-        btnAgregar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnAgregar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_agregar_sel.png"))); // NOI18N
-        btnAgregar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAgregarActionPerformed(evt);
-            }
-        });
-
-        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_eliminar.png"))); // NOI18N
-        btnEliminar.setBorder(null);
-        btnEliminar.setContentAreaFilled(false);
-        btnEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnEliminar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_eliminar_sel.png"))); // NOI18N
-        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminarActionPerformed(evt);
-            }
-        });
-
-        btnMostrar.setBackground(new java.awt.Color(60, 63, 65));
-        btnMostrar.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        btnMostrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_mostrar.png"))); // NOI18N
-        btnMostrar.setBorder(null);
-        btnMostrar.setContentAreaFilled(false);
-        btnMostrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnMostrar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_mostrar_sel.png"))); // NOI18N
-        btnMostrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMostrarActionPerformed(evt);
-            }
-        });
-
-        btnModificar.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        btnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_modificar.png"))); // NOI18N
-        btnModificar.setBorder(null);
-        btnModificar.setContentAreaFilled(false);
-        btnModificar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnModificar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_modificar_sel.png"))); // NOI18N
-        btnModificar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnModificarActionPerformed(evt);
-            }
-        });
-
-        btnSolicitar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_solicitar.png"))); // NOI18N
-        btnSolicitar.setContentAreaFilled(false);
-        btnSolicitar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnSolicitar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_solicitar_sel.png"))); // NOI18N
-        btnSolicitar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSolicitarActionPerformed(evt);
-            }
-        });
+        bg.add(lblResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 500, 220, 30));
 
         bgTitle.setBackground(new java.awt.Color(28, 37, 65));
 
@@ -200,6 +138,18 @@ public class Conectar extends javax.swing.JFrame {
         lblWulritzer.setForeground(new java.awt.Color(255, 255, 255));
         lblWulritzer.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblWulritzer.setText("WURLITZER DB");
+        lblWulritzer.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblWulritzer.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblWulritzerMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblWulritzerMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblWulritzerMouseExited(evt);
+            }
+        });
 
         javax.swing.GroupLayout bgTitleLayout = new javax.swing.GroupLayout(bgTitle);
         bgTitle.setLayout(bgTitleLayout);
@@ -212,48 +162,193 @@ public class Conectar extends javax.swing.JFrame {
             .addComponent(lblWulritzer, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
-        bg.setLayout(bgLayout);
-        bgLayout.setHorizontalGroup(
-            bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(bgLayout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(btnConectar)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(bgTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(lblResultado, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnMostrar, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnSolicitar, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-        );
-        bgLayout.setVerticalGroup(
-            bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
-                .addContainerGap(49, Short.MAX_VALUE)
-                .addComponent(bgTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44)
-                .addComponent(btnAgregar)
-                .addGap(10, 10, 10)
-                .addComponent(btnEliminar)
-                .addGap(10, 10, 10)
-                .addComponent(btnMostrar)
-                .addGap(10, 10, 10)
-                .addComponent(btnModificar)
-                .addGap(10, 10, 10)
-                .addComponent(btnSolicitar)
-                .addGap(47, 47, 47)
-                .addComponent(lblResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnConectar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27))
-        );
+        bg.add(bgTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, -1, -1));
+
+        bgAgregar.setBackground(new java.awt.Color(28, 37, 65));
+        bgAgregar.setRoundBottomLeft(55);
+        bgAgregar.setRoundBottomRight(55);
+        bgAgregar.setRoundTopLeft(55);
+        bgAgregar.setRoundTopRight(55);
+        bgAgregar.setLayout(null);
+
+        lblAgregar.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
+        lblAgregar.setForeground(new java.awt.Color(255, 255, 255));
+        lblAgregar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblAgregar.setText("Agregar");
+        lblAgregar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblAgregar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblAgregarMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblAgregarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblAgregarMouseExited(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                lblAgregarMouseReleased(evt);
+            }
+        });
+        bgAgregar.add(lblAgregar);
+        lblAgregar.setBounds(0, 0, 200, 50);
+
+        bg.add(bgAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 200, 50));
+
+        bgEliminar.setBackground(new java.awt.Color(28, 37, 65));
+        bgEliminar.setRoundBottomLeft(55);
+        bgEliminar.setRoundBottomRight(55);
+        bgEliminar.setRoundTopLeft(55);
+        bgEliminar.setRoundTopRight(55);
+        bgEliminar.setLayout(null);
+
+        lblEliminar.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
+        lblEliminar.setForeground(new java.awt.Color(255, 255, 255));
+        lblEliminar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblEliminar.setText("Eliminar");
+        lblEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblEliminar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblEliminarMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblEliminarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblEliminarMouseExited(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                lblEliminarMouseReleased(evt);
+            }
+        });
+        bgEliminar.add(lblEliminar);
+        lblEliminar.setBounds(0, 0, 200, 50);
+
+        bg.add(bgEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 200, 50));
+
+        bgModificar.setBackground(new java.awt.Color(28, 37, 65));
+        bgModificar.setRoundBottomLeft(55);
+        bgModificar.setRoundBottomRight(55);
+        bgModificar.setRoundTopLeft(55);
+        bgModificar.setRoundTopRight(55);
+        bgModificar.setLayout(null);
+
+        lblModificar.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
+        lblModificar.setForeground(new java.awt.Color(255, 255, 255));
+        lblModificar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblModificar.setText("Modificar");
+        lblModificar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblModificar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblModificarMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblModificarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblModificarMouseExited(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                lblModificarMouseReleased(evt);
+            }
+        });
+        bgModificar.add(lblModificar);
+        lblModificar.setBounds(0, 0, 200, 50);
+
+        bg.add(bgModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 200, 50));
+
+        bgMostrar.setBackground(new java.awt.Color(28, 37, 65));
+        bgMostrar.setRoundBottomLeft(55);
+        bgMostrar.setRoundBottomRight(55);
+        bgMostrar.setRoundTopLeft(55);
+        bgMostrar.setRoundTopRight(55);
+        bgMostrar.setLayout(null);
+
+        lblMostrar.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
+        lblMostrar.setForeground(new java.awt.Color(255, 255, 255));
+        lblMostrar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblMostrar.setText("Mostrar");
+        lblMostrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblMostrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblMostrarMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblMostrarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblMostrarMouseExited(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                lblMostrarMouseReleased(evt);
+            }
+        });
+        bgMostrar.add(lblMostrar);
+        lblMostrar.setBounds(0, 0, 200, 50);
+
+        bg.add(bgMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 200, 50));
+
+        bgSolicitar.setBackground(new java.awt.Color(28, 37, 65));
+        bgSolicitar.setRoundBottomLeft(55);
+        bgSolicitar.setRoundBottomRight(55);
+        bgSolicitar.setRoundTopLeft(55);
+        bgSolicitar.setRoundTopRight(55);
+        bgSolicitar.setLayout(null);
+
+        lblSolicitar.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
+        lblSolicitar.setForeground(new java.awt.Color(255, 255, 255));
+        lblSolicitar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblSolicitar.setText("Solicitar");
+        lblSolicitar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblSolicitar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblSolicitarMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblSolicitarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblSolicitarMouseExited(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                lblSolicitarMouseReleased(evt);
+            }
+        });
+        bgSolicitar.add(lblSolicitar);
+        lblSolicitar.setBounds(0, 0, 200, 50);
+
+        bg.add(bgSolicitar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, 200, 50));
+
+        bgConectar.setBackground(new java.awt.Color(28, 37, 65));
+        bgConectar.setRoundBottomLeft(40);
+        bgConectar.setRoundBottomRight(40);
+        bgConectar.setRoundTopLeft(40);
+        bgConectar.setRoundTopRight(40);
+        bgConectar.setLayout(null);
+
+        lblConectar.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
+        lblConectar.setForeground(new java.awt.Color(255, 255, 255));
+        lblConectar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblConectar.setText("Conectar");
+        lblConectar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblConectar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblConectarMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblConectarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblConectarMouseExited(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                lblConectarMouseReleased(evt);
+            }
+        });
+        bgConectar.add(lblConectar);
+        lblConectar.setBounds(0, 0, 140, 40);
+
+        bg.add(bgConectar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 530, 140, 40));
 
         getContentPane().add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 220, 600));
 
@@ -285,8 +380,6 @@ public class Conectar extends javax.swing.JFrame {
         btnMinimizar.setBorderPainted(false);
         btnMinimizar.setContentAreaFilled(false);
         btnMinimizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnMinimizar.setMaximumSize(new java.awt.Dimension(24, 24));
-        btnMinimizar.setMinimumSize(new java.awt.Dimension(24, 24));
         btnMinimizar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_minimize_sel.png"))); // NOI18N
         btnMinimizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -319,49 +412,6 @@ public class Conectar extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnConectarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConectarActionPerformed
-        // TODO add your handling code here:
-        Conectar();
-    }//GEN-LAST:event_btnConectarActionPerformed
-
-    private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
-        // TODO add your handling code here:
-
-        AgregarPanel agPn = new AgregarPanel();
-        agPn.setSize(580, 570);
-        agPn.setLocation(0, 0);
-
-        Agregar.removeAll();
-        Agregar.add(agPn, BorderLayout.CENTER);
-        Agregar.revalidate();
-        Agregar.repaint();
-    }//GEN-LAST:event_btnAgregarActionPerformed
-
-    private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
-        // TODO add your handling code here:
-
-        Modificar moPn = new Modificar();
-        moPn.setSize(580, 570);
-        moPn.setLocation(0, 0);
-
-        Agregar.removeAll();
-        Agregar.add(moPn, BorderLayout.CENTER);
-        Agregar.revalidate();
-        Agregar.repaint();
-    }//GEN-LAST:event_btnModificarActionPerformed
-
-    private void btnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarActionPerformed
-        // TODO add your handling code here:
-        MostrarPanel mosPn = new MostrarPanel();
-        mosPn.setSize(580, 570);
-        mosPn.setLocation(0, 0);
-
-        Agregar.removeAll();
-        Agregar.add(mosPn, BorderLayout.CENTER);
-        Agregar.revalidate();
-        Agregar.repaint();
-    }//GEN-LAST:event_btnMostrarActionPerformed
-
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         // TODO add your handling code here:
         this.dispose();
@@ -383,7 +433,131 @@ public class Conectar extends javax.swing.JFrame {
         this.setLocation(x - xMouse, y - yMouse);
     }//GEN-LAST:event_panelVentanaMouseDragged
 
-    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+    private void btnMinimizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMinimizarActionPerformed
+        // TODO add your handling code here:
+        this.setExtendedState(Conectar.ICONIFIED);
+
+    }//GEN-LAST:event_btnMinimizarActionPerformed
+
+    private void lblWulritzerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblWulritzerMouseClicked
+        // TODO add your handling code here:
+        Reproduccion agPn = new Reproduccion();
+        agPn.setSize(580, 570);
+        agPn.setLocation(0, 0);
+
+        Agregar.removeAll();
+        Agregar.add(agPn, BorderLayout.CENTER);
+        Agregar.revalidate();
+        Agregar.repaint();        
+    }//GEN-LAST:event_lblWulritzerMouseClicked
+
+    private void lblWulritzerMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblWulritzerMouseEntered
+        // TODO add your handling code here:
+        bgTitle.setBackground(new Color(0x5BC0BE));
+    }//GEN-LAST:event_lblWulritzerMouseEntered
+
+    private void lblWulritzerMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblWulritzerMouseExited
+        // TODO add your handling code here:
+        bgTitle.setBackground(new Color(0x1C2541));
+    }//GEN-LAST:event_lblWulritzerMouseExited
+
+    private void lblAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAgregarMouseClicked
+        // TODO add your handling code here:    
+    }//GEN-LAST:event_lblAgregarMouseClicked
+
+    private void lblAgregarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAgregarMouseEntered
+        // TODO add your handling code here:
+        bgAgregar.setBackground(new Color(0x5BC0BE));
+    }//GEN-LAST:event_lblAgregarMouseEntered
+
+    private void lblAgregarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAgregarMouseExited
+        // TODO add your handling code here:
+        bgAgregar.setBackground(new Color(0x1C2541));
+    }//GEN-LAST:event_lblAgregarMouseExited
+
+    private void lblEliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEliminarMouseClicked
+        // TODO add your handling code here: 
+    }//GEN-LAST:event_lblEliminarMouseClicked
+
+    private void lblEliminarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEliminarMouseEntered
+        // TODO add your handling code here:
+        bgEliminar.setBackground(new Color(0x5BC0BE));
+    }//GEN-LAST:event_lblEliminarMouseEntered
+
+    private void lblEliminarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEliminarMouseExited
+        // TODO add your handling code here:
+        bgEliminar.setBackground(new Color(0x1C2541));
+    }//GEN-LAST:event_lblEliminarMouseExited
+
+    private void lblModificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblModificarMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblModificarMouseClicked
+
+    private void lblModificarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblModificarMouseEntered
+        // TODO add your handling code here:
+        bgModificar.setBackground(new Color(0x5BC0BE));
+    }//GEN-LAST:event_lblModificarMouseEntered
+
+    private void lblModificarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblModificarMouseExited
+        // TODO add your handling code here:
+        bgModificar.setBackground(new Color(0x1C2541));
+    }//GEN-LAST:event_lblModificarMouseExited
+
+    private void lblMostrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMostrarMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblMostrarMouseClicked
+
+    private void lblMostrarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMostrarMouseEntered
+        // TODO add your handling code here:
+        bgMostrar.setBackground(new Color(0x5BC0BE));
+    }//GEN-LAST:event_lblMostrarMouseEntered
+
+    private void lblMostrarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMostrarMouseExited
+        // TODO add your handling code here:
+        bgMostrar.setBackground(new Color(0x1C2541));
+    }//GEN-LAST:event_lblMostrarMouseExited
+
+    private void lblSolicitarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSolicitarMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblSolicitarMouseClicked
+
+    private void lblSolicitarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSolicitarMouseEntered
+        // TODO add your handling code here:
+        bgSolicitar.setBackground(new Color(0x5BC0BE));
+    }//GEN-LAST:event_lblSolicitarMouseEntered
+
+    private void lblSolicitarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSolicitarMouseExited
+        // TODO add your handling code here:
+        bgSolicitar.setBackground(new Color(0x1C2541));
+    }//GEN-LAST:event_lblSolicitarMouseExited
+
+    private void lblConectarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblConectarMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblConectarMouseClicked
+
+    private void lblConectarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblConectarMouseEntered
+        // TODO add your handling code here:
+        bgConectar.setBackground(new Color(0x5BC0BE));
+    }//GEN-LAST:event_lblConectarMouseEntered
+
+    private void lblConectarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblConectarMouseExited
+        // TODO add your handling code here:
+        bgConectar.setBackground(new Color(0x1C2541));
+    }//GEN-LAST:event_lblConectarMouseExited
+
+    private void lblAgregarMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAgregarMouseReleased
+        // TODO add your handling code here:
+        AgregarPanel agPn = new AgregarPanel();
+        agPn.setSize(580, 570);
+        agPn.setLocation(0, 0);
+
+        Agregar.removeAll();
+        Agregar.add(agPn, BorderLayout.CENTER);
+        Agregar.revalidate();
+        Agregar.repaint();  
+    }//GEN-LAST:event_lblAgregarMouseReleased
+
+    private void lblEliminarMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEliminarMouseReleased
         // TODO add your handling code here:
         Eliminar agPn = new Eliminar();
         agPn.setSize(580, 570);
@@ -392,10 +566,34 @@ public class Conectar extends javax.swing.JFrame {
         Agregar.removeAll();
         Agregar.add(agPn, BorderLayout.CENTER);
         Agregar.revalidate();
-        Agregar.repaint();
-    }//GEN-LAST:event_btnEliminarActionPerformed
+        Agregar.repaint(); 
+    }//GEN-LAST:event_lblEliminarMouseReleased
 
-    private void btnSolicitarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSolicitarActionPerformed
+    private void lblMostrarMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMostrarMouseReleased
+        // TODO add your handling code here:
+        MostrarPanel mosPn = new MostrarPanel();
+        mosPn.setSize(580, 570);
+        mosPn.setLocation(0, 0);
+
+        Agregar.removeAll();
+        Agregar.add(mosPn, BorderLayout.CENTER);
+        Agregar.revalidate();
+        Agregar.repaint();
+    }//GEN-LAST:event_lblMostrarMouseReleased
+
+    private void lblModificarMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblModificarMouseReleased
+        // TODO add your handling code here:
+        Modificar moPn = new Modificar();
+        moPn.setSize(580, 570);
+        moPn.setLocation(0, 0);
+
+        Agregar.removeAll();
+        Agregar.add(moPn, BorderLayout.CENTER);
+        Agregar.revalidate();
+        Agregar.repaint();
+    }//GEN-LAST:event_lblModificarMouseReleased
+
+    private void lblSolicitarMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSolicitarMouseReleased
         // TODO add your handling code here:
         Solicitar agPn = new Solicitar();
         agPn.setSize(580, 570);
@@ -405,13 +603,12 @@ public class Conectar extends javax.swing.JFrame {
         Agregar.add(agPn, BorderLayout.CENTER);
         Agregar.revalidate();
         Agregar.repaint();
-    }//GEN-LAST:event_btnSolicitarActionPerformed
+    }//GEN-LAST:event_lblSolicitarMouseReleased
 
-    private void btnMinimizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMinimizarActionPerformed
+    private void lblConectarMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblConectarMouseReleased
         // TODO add your handling code here:
-        this.setExtendedState(Conectar.ICONIFIED);
-
-    }//GEN-LAST:event_btnMinimizarActionPerformed
+        Conectar();
+    }//GEN-LAST:event_lblConectarMouseReleased
 
     /**
      * @param args the command line arguments
@@ -452,16 +649,22 @@ public class Conectar extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Agregar;
     private javax.swing.JPanel bg;
+    private panels.PanelRound bgAgregar;
+    private panels.PanelRound bgConectar;
+    private panels.PanelRound bgEliminar;
+    private panels.PanelRound bgModificar;
+    private panels.PanelRound bgMostrar;
+    private panels.PanelRound bgSolicitar;
     private javax.swing.JPanel bgTitle;
-    private javax.swing.JButton btnAgregar;
-    private javax.swing.JButton btnConectar;
-    private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnMinimizar;
-    private javax.swing.JButton btnModificar;
-    private javax.swing.JButton btnMostrar;
     private javax.swing.JButton btnSalir;
-    private javax.swing.JButton btnSolicitar;
+    private javax.swing.JLabel lblAgregar;
+    private javax.swing.JLabel lblConectar;
+    private javax.swing.JLabel lblEliminar;
+    private javax.swing.JLabel lblModificar;
+    private javax.swing.JLabel lblMostrar;
     private javax.swing.JLabel lblResultado;
+    private javax.swing.JLabel lblSolicitar;
     private javax.swing.JLabel lblWulritzer;
     private javax.swing.JPanel panelVentana;
     // End of variables declaration//GEN-END:variables

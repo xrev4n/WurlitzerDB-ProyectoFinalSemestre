@@ -48,14 +48,16 @@ public class Modificar extends javax.swing.JPanel {
         Agregar = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         JListCanciones = new javax.swing.JList<>();
-        btnModificar = new javax.swing.JButton();
         btnMostrar = new javax.swing.JButton();
         lblModificar = new javax.swing.JLabel();
+        bgModificar = new panels.PanelRound();
+        lblModificar1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(225, 245, 254));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Agregar.setBackground(new java.awt.Color(234, 246, 255));
+        Agregar.setLayout(null);
 
         JListCanciones.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         JListCanciones.setModel(new javax.swing.AbstractListModel<String>() {
@@ -67,17 +69,8 @@ public class Modificar extends javax.swing.JPanel {
         JListCanciones.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jScrollPane1.setViewportView(JListCanciones);
 
-        btnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_modificar.png"))); // NOI18N
-        btnModificar.setBorder(null);
-        btnModificar.setBorderPainted(false);
-        btnModificar.setContentAreaFilled(false);
-        btnModificar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnModificar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_modificar_sel.png"))); // NOI18N
-        btnModificar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnModificarActionPerformed(evt);
-            }
-        });
+        Agregar.add(jScrollPane1);
+        jScrollPane1.setBounds(50, 120, 480, 360);
 
         btnMostrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/refresh.png"))); // NOI18N
         btnMostrar.setBorder(null);
@@ -90,39 +83,47 @@ public class Modificar extends javax.swing.JPanel {
                 btnMostrarActionPerformed(evt);
             }
         });
+        Agregar.add(btnMostrar);
+        btnMostrar.setBounds(500, 90, 24, 24);
 
         lblModificar.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
         lblModificar.setForeground(new java.awt.Color(11, 19, 43));
         lblModificar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblModificar.setText("Selecciona una canción");
+        Agregar.add(lblModificar);
+        lblModificar.setBounds(0, 40, 574, 30);
 
-        javax.swing.GroupLayout AgregarLayout = new javax.swing.GroupLayout(Agregar);
-        Agregar.setLayout(AgregarLayout);
-        AgregarLayout.setHorizontalGroup(
-            AgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 574, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(AgregarLayout.createSequentialGroup()
-                .addGap(500, 500, 500)
-                .addComponent(btnMostrar))
-            .addGroup(AgregarLayout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(AgregarLayout.createSequentialGroup()
-                .addGap(180, 180, 180)
-                .addComponent(btnModificar))
-        );
-        AgregarLayout.setVerticalGroup(
-            AgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(AgregarLayout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addComponent(lblModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(btnMostrar)
-                .addGap(6, 6, 6)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
-                .addComponent(btnModificar))
-        );
+        bgModificar.setBackground(new java.awt.Color(28, 37, 65));
+        bgModificar.setRoundBottomLeft(55);
+        bgModificar.setRoundBottomRight(55);
+        bgModificar.setRoundTopLeft(55);
+        bgModificar.setRoundTopRight(55);
+        bgModificar.setLayout(null);
+
+        lblModificar1.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
+        lblModificar1.setForeground(new java.awt.Color(255, 255, 255));
+        lblModificar1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblModificar1.setText("Modificar");
+        lblModificar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblModificar1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblModificar1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblModificar1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblModificar1MouseExited(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                lblModificar1MouseReleased(evt);
+            }
+        });
+        bgModificar.add(lblModificar1);
+        lblModificar1.setBounds(0, 0, 200, 50);
+
+        Agregar.add(bgModificar);
+        bgModificar.setBounds(190, 500, 200, 50);
 
         add(Agregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, 590));
     }// </editor-fold>//GEN-END:initComponents
@@ -169,7 +170,21 @@ public class Modificar extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnMostrarActionPerformed
 
-    private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
+    private void lblModificar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblModificar1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblModificar1MouseClicked
+
+    private void lblModificar1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblModificar1MouseEntered
+        // TODO add your handling code here:
+        bgModificar.setBackground(new Color(0x5BC0BE));
+    }//GEN-LAST:event_lblModificar1MouseEntered
+
+    private void lblModificar1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblModificar1MouseExited
+        // TODO add your handling code here:
+        bgModificar.setBackground(new Color(0x1C2541));
+    }//GEN-LAST:event_lblModificar1MouseExited
+
+    private void lblModificar1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblModificar1MouseReleased
         // TODO add your handling code here:
         int selectedIndex = JListCanciones.getSelectedIndex();
 
@@ -194,8 +209,7 @@ public class Modificar extends javax.swing.JPanel {
         } else {
             // Mostrar un mensaje o tomar otra acción si no se ha seleccionado ninguna canción.
         }
-
-    }//GEN-LAST:event_btnModificarActionPerformed
+    }//GEN-LAST:event_lblModificar1MouseReleased
     private void LlenarJList() {
         listModelJList.clear(); // Limpiar el modelo del JList
 
@@ -216,9 +230,10 @@ public class Modificar extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Agregar;
     private javax.swing.JList<String> JListCanciones;
-    private javax.swing.JButton btnModificar;
+    private panels.PanelRound bgModificar;
     private javax.swing.JButton btnMostrar;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblModificar;
+    private javax.swing.JLabel lblModificar1;
     // End of variables declaration//GEN-END:variables
 }

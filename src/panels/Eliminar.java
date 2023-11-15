@@ -1,5 +1,6 @@
 package panels;
 
+import java.awt.Color;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -42,10 +43,11 @@ public class Eliminar extends javax.swing.JPanel {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         JListCanciones = new javax.swing.JList<>();
-        btnEliminar = new javax.swing.JButton();
         btnRecargar = new javax.swing.JButton();
         lblEliminar = new javax.swing.JLabel();
         lblResultado = new javax.swing.JLabel();
+        bgEliminar = new panels.PanelRound();
+        lblEliminar1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(234, 246, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -61,19 +63,6 @@ public class Eliminar extends javax.swing.JPanel {
         jScrollPane1.setViewportView(JListCanciones);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 480, 360));
-
-        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_eliminar.png"))); // NOI18N
-        btnEliminar.setBorder(null);
-        btnEliminar.setBorderPainted(false);
-        btnEliminar.setContentAreaFilled(false);
-        btnEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnEliminar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_eliminar_sel.png"))); // NOI18N
-        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminarActionPerformed(evt);
-            }
-        });
-        add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 500, -1, -1));
 
         btnRecargar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/refresh.png"))); // NOI18N
         btnRecargar.setBorder(null);
@@ -97,6 +86,37 @@ public class Eliminar extends javax.swing.JPanel {
         lblResultado.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         lblResultado.setForeground(new java.awt.Color(11, 19, 43));
         add(lblResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 86, 440, 30));
+
+        bgEliminar.setBackground(new java.awt.Color(28, 37, 65));
+        bgEliminar.setRoundBottomLeft(55);
+        bgEliminar.setRoundBottomRight(55);
+        bgEliminar.setRoundTopLeft(55);
+        bgEliminar.setRoundTopRight(55);
+        bgEliminar.setLayout(null);
+
+        lblEliminar1.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
+        lblEliminar1.setForeground(new java.awt.Color(255, 255, 255));
+        lblEliminar1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblEliminar1.setText("Eliminar");
+        lblEliminar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblEliminar1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblEliminar1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblEliminar1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblEliminar1MouseExited(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                lblEliminar1MouseReleased(evt);
+            }
+        });
+        bgEliminar.add(lblEliminar1);
+        lblEliminar1.setBounds(0, 0, 200, 50);
+
+        add(bgEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 500, 200, 50));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRecargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecargarActionPerformed
@@ -105,9 +125,23 @@ public class Eliminar extends javax.swing.JPanel {
 
     }//GEN-LAST:event_btnRecargarActionPerformed
 
-    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+    private void lblEliminar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEliminar1MouseClicked
         // TODO add your handling code here:
-        // Obtener el índice seleccionado en la JList
+    }//GEN-LAST:event_lblEliminar1MouseClicked
+
+    private void lblEliminar1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEliminar1MouseEntered
+        // TODO add your handling code here:
+        bgEliminar.setBackground(new Color(0x5BC0BE));
+    }//GEN-LAST:event_lblEliminar1MouseEntered
+
+    private void lblEliminar1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEliminar1MouseExited
+        // TODO add your handling code here:
+        bgEliminar.setBackground(new Color(0x1C2541));
+    }//GEN-LAST:event_lblEliminar1MouseExited
+
+    private void lblEliminar1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEliminar1MouseReleased
+        // TODO add your handling code here:
+                // Obtener el índice seleccionado en la JList
         int selectedIndex = JListCanciones.getSelectedIndex();
         // Verificar si se ha seleccionado un elemento
         if (selectedIndex != -1) {
@@ -126,7 +160,8 @@ public class Eliminar extends javax.swing.JPanel {
         } else {
             lblResultado.setText("Debes seleccionar una canción primero");
         }
-    }//GEN-LAST:event_btnEliminarActionPerformed
+        
+    }//GEN-LAST:event_lblEliminar1MouseReleased
     private void LlenarJList() {
         listModelJList.clear(); // Limpiar el modelo del JList
 
@@ -200,10 +235,11 @@ public class Eliminar extends javax.swing.JPanel {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JList<String> JListCanciones;
-    private javax.swing.JButton btnEliminar;
+    private panels.PanelRound bgEliminar;
     private javax.swing.JButton btnRecargar;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblEliminar;
+    private javax.swing.JLabel lblEliminar1;
     private javax.swing.JLabel lblResultado;
     // End of variables declaration//GEN-END:variables
 }
