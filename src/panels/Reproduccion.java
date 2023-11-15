@@ -74,7 +74,7 @@ public class Reproduccion extends javax.swing.JPanel {
 
         lblDisc.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblDisc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/disc.gif"))); // NOI18N
-        panelReproductor.add(lblDisc, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 410, 60));
+        panelReproductor.add(lblDisc, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 410, 60));
 
         btnPlay.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/play.png"))); // NOI18N
         btnPlay.setBorder(null);

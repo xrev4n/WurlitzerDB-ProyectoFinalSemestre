@@ -52,14 +52,16 @@ public class Solicitar extends javax.swing.JPanel {
         lblNombre = new javax.swing.JLabel();
         jSeparator5 = new javax.swing.JSeparator();
         jSeparator6 = new javax.swing.JSeparator();
-        btnEnviar = new javax.swing.JButton();
-        btnLimpiar = new javax.swing.JButton();
         lblAgregarCanciones = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         JListCanciones = new javax.swing.JList<>();
         btnRefresh = new javax.swing.JButton();
         btnSolicitudes = new panels.PanelRound();
         lblSolicitudes = new javax.swing.JLabel();
+        bgLimpiar = new panels.PanelRound();
+        lblLimpiar = new javax.swing.JLabel();
+        bgEnviar = new panels.PanelRound();
+        lblEnviar = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(600, 580));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -96,30 +98,6 @@ public class Solicitar extends javax.swing.JPanel {
         bg.add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, 220, 20));
         bg.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 530, 210, 10));
         bg.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, 210, 10));
-
-        btnEnviar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_enviar.png"))); // NOI18N
-        btnEnviar.setBorderPainted(false);
-        btnEnviar.setContentAreaFilled(false);
-        btnEnviar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnEnviar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_enviar_sel.png"))); // NOI18N
-        btnEnviar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEnviarActionPerformed(evt);
-            }
-        });
-        bg.add(btnEnviar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 390, 200, 50));
-
-        btnLimpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_limpiar.png"))); // NOI18N
-        btnLimpiar.setBorderPainted(false);
-        btnLimpiar.setContentAreaFilled(false);
-        btnLimpiar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnLimpiar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_limpiar_sel.png"))); // NOI18N
-        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLimpiarActionPerformed(evt);
-            }
-        });
-        bg.add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 480, 200, 50));
 
         lblAgregarCanciones.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
         lblAgregarCanciones.setForeground(new java.awt.Color(11, 19, 43));
@@ -174,18 +152,70 @@ public class Solicitar extends javax.swing.JPanel {
 
         bg.add(btnSolicitudes, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 140, 40));
 
-        add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 610));
+        bgLimpiar.setBackground(new java.awt.Color(28, 37, 65));
+        bgLimpiar.setRoundBottomLeft(55);
+        bgLimpiar.setRoundBottomRight(55);
+        bgLimpiar.setRoundTopLeft(55);
+        bgLimpiar.setRoundTopRight(55);
+        bgLimpiar.setLayout(null);
+
+        lblLimpiar.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
+        lblLimpiar.setForeground(new java.awt.Color(255, 255, 255));
+        lblLimpiar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblLimpiar.setText("Limpiar");
+        lblLimpiar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblLimpiar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblLimpiarMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblLimpiarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblLimpiarMouseExited(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                lblLimpiarMouseReleased(evt);
+            }
+        });
+        bgLimpiar.add(lblLimpiar);
+        lblLimpiar.setBounds(0, 0, 200, 50);
+
+        bg.add(bgLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 480, 200, 50));
+
+        bgEnviar.setBackground(new java.awt.Color(28, 37, 65));
+        bgEnviar.setRoundBottomLeft(55);
+        bgEnviar.setRoundBottomRight(55);
+        bgEnviar.setRoundTopLeft(55);
+        bgEnviar.setRoundTopRight(55);
+        bgEnviar.setLayout(null);
+
+        lblEnviar.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
+        lblEnviar.setForeground(new java.awt.Color(255, 255, 255));
+        lblEnviar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblEnviar.setText("Enviar");
+        lblEnviar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblEnviar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblEnviarMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblEnviarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblEnviarMouseExited(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                lblEnviarMouseReleased(evt);
+            }
+        });
+        bgEnviar.add(lblEnviar);
+        lblEnviar.setBounds(0, 0, 200, 50);
+
+        bg.add(bgEnviar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 400, 200, 50));
+
+        add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, 570));
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnEnviarActionPerformed
-
-    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
-        // TODO add your handling code here:
-        txtNombre.setText("");
-        txtEscuela.setText("");
-    }//GEN-LAST:event_btnLimpiarActionPerformed
 
     private void txtEscuelaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEscuelaActionPerformed
         // TODO add your handling code here:
@@ -255,6 +285,45 @@ public class Solicitar extends javax.swing.JPanel {
         // TODO add your handling code here:
         btnSolicitudes.setBackground(new Color(0x1C2541));
     }//GEN-LAST:event_lblSolicitudesMouseExited
+
+    private void lblLimpiarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLimpiarMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblLimpiarMouseClicked
+
+    private void lblLimpiarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLimpiarMouseEntered
+        // TODO add your handling code here:
+        bgLimpiar.setBackground(new Color(0x5BC0BE));
+    }//GEN-LAST:event_lblLimpiarMouseEntered
+
+    private void lblLimpiarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLimpiarMouseExited
+        // TODO add your handling code here:
+        bgLimpiar.setBackground(new Color(0x1C2541));
+    }//GEN-LAST:event_lblLimpiarMouseExited
+
+    private void lblLimpiarMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLimpiarMouseReleased
+        // TODO add your handling code here:
+        txtNombre.setText("");
+        txtEscuela.setText("");
+    }//GEN-LAST:event_lblLimpiarMouseReleased
+
+    private void lblEnviarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEnviarMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblEnviarMouseClicked
+
+    private void lblEnviarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEnviarMouseEntered
+        // TODO add your handling code here:
+        bgEnviar.setBackground(new Color(0x5BC0BE));
+    }//GEN-LAST:event_lblEnviarMouseEntered
+
+    private void lblEnviarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEnviarMouseExited
+        // TODO add your handling code here:
+        bgEnviar.setBackground(new Color(0x1C2541));
+    }//GEN-LAST:event_lblEnviarMouseExited
+
+    private void lblEnviarMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEnviarMouseReleased
+        // TODO add your handling code here:
+        //PROGRAMAR AQUI BOTON ENVIAR
+    }//GEN-LAST:event_lblEnviarMouseReleased
     private void LlenarJList() {
         listModelJList.clear(); // Limpiar el modelo del JList
 
@@ -276,15 +345,17 @@ public class Solicitar extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JList<String> JListCanciones;
     private javax.swing.JPanel bg;
-    private javax.swing.JButton btnEnviar;
-    private javax.swing.JButton btnLimpiar;
+    private panels.PanelRound bgEnviar;
+    private panels.PanelRound bgLimpiar;
     private javax.swing.JButton btnRefresh;
     private panels.PanelRound btnSolicitudes;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JLabel lblAgregarCanciones;
+    private javax.swing.JLabel lblEnviar;
     private javax.swing.JLabel lblEscuela;
+    private javax.swing.JLabel lblLimpiar;
     private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblResultado;
     private javax.swing.JLabel lblSolicitudes;
