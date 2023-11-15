@@ -94,8 +94,8 @@ public class Conectar extends javax.swing.JFrame {
         bgConectar = new panels.PanelRound();
         lblConectar = new javax.swing.JLabel();
         panelVentana = new javax.swing.JPanel();
-        btnSalir = new javax.swing.JButton();
-        btnMinimizar = new javax.swing.JButton();
+        lblSalir = new javax.swing.JLabel();
+        lblMinimizar = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -364,26 +364,37 @@ public class Conectar extends javax.swing.JFrame {
             }
         });
 
-        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_salir.png"))); // NOI18N
-        btnSalir.setBorder(null);
-        btnSalir.setContentAreaFilled(false);
-        btnSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnSalir.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_salir_sel.png"))); // NOI18N
-        btnSalir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSalirActionPerformed(evt);
+        lblSalir.setFont(new java.awt.Font("Roboto Black", 0, 20)); // NOI18N
+        lblSalir.setForeground(new java.awt.Color(28, 37, 65));
+        lblSalir.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblSalir.setText("X");
+        lblSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblSalir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblSalirMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblSalirMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblSalirMouseExited(evt);
             }
         });
 
-        btnMinimizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_minimize.png"))); // NOI18N
-        btnMinimizar.setBorder(null);
-        btnMinimizar.setBorderPainted(false);
-        btnMinimizar.setContentAreaFilled(false);
-        btnMinimizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnMinimizar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button_minimize_sel.png"))); // NOI18N
-        btnMinimizar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMinimizarActionPerformed(evt);
+        lblMinimizar.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
+        lblMinimizar.setForeground(new java.awt.Color(28, 37, 65));
+        lblMinimizar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblMinimizar.setText("_");
+        lblMinimizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblMinimizar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblMinimizarMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblMinimizarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblMinimizarMouseExited(evt);
             }
         });
 
@@ -392,30 +403,26 @@ public class Conectar extends javax.swing.JFrame {
         panelVentanaLayout.setHorizontalGroup(
             panelVentanaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelVentanaLayout.createSequentialGroup()
-                .addContainerGap(740, Short.MAX_VALUE)
-                .addComponent(btnMinimizar, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(747, Short.MAX_VALUE)
+                .addComponent(lblMinimizar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblSalir)
+                .addGap(17, 17, 17))
         );
         panelVentanaLayout.setVerticalGroup(
             panelVentanaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelVentanaLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(panelVentanaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnSalir, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnMinimizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblSalir))
+            .addGroup(panelVentanaLayout.createSequentialGroup()
+                .addComponent(lblMinimizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         getContentPane().add(panelVentana, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-        // TODO add your handling code here:
-        this.dispose();
-    }//GEN-LAST:event_btnSalirActionPerformed
 
     private void panelVentanaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelVentanaMousePressed
         // TODO add your handling code here:
@@ -432,12 +439,6 @@ public class Conectar extends javax.swing.JFrame {
         //Mueve ventana a la posicion del mouse
         this.setLocation(x - xMouse, y - yMouse);
     }//GEN-LAST:event_panelVentanaMouseDragged
-
-    private void btnMinimizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMinimizarActionPerformed
-        // TODO add your handling code here:
-        this.setExtendedState(Conectar.ICONIFIED);
-
-    }//GEN-LAST:event_btnMinimizarActionPerformed
 
     private void lblWulritzerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblWulritzerMouseClicked
         // TODO add your handling code here:
@@ -610,6 +611,37 @@ public class Conectar extends javax.swing.JFrame {
         Conectar();
     }//GEN-LAST:event_lblConectarMouseReleased
 
+    private void lblSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSalirMouseClicked
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_lblSalirMouseClicked
+
+    private void lblSalirMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSalirMouseEntered
+        // TODO add your handling code here:
+        lblSalir.setForeground(new Color(0x5BC0BE));
+    }//GEN-LAST:event_lblSalirMouseEntered
+
+    private void lblSalirMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSalirMouseExited
+        // TODO add your handling code here:
+        lblSalir.setForeground(new Color(0x1C2541));
+    }//GEN-LAST:event_lblSalirMouseExited
+
+    private void lblMinimizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMinimizarMouseClicked
+        // TODO add your handling code here:
+        this.setExtendedState(Conectar.ICONIFIED);
+
+    }//GEN-LAST:event_lblMinimizarMouseClicked
+
+    private void lblMinimizarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMinimizarMouseEntered
+        // TODO add your handling code here:
+        lblMinimizar.setForeground(new Color(0x5BC0BE));
+    }//GEN-LAST:event_lblMinimizarMouseEntered
+
+    private void lblMinimizarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMinimizarMouseExited
+        // TODO add your handling code here:
+        lblMinimizar.setForeground(new Color(0x1C2541));
+    }//GEN-LAST:event_lblMinimizarMouseExited
+
     /**
      * @param args the command line arguments
      */
@@ -656,14 +688,14 @@ public class Conectar extends javax.swing.JFrame {
     private panels.PanelRound bgMostrar;
     private panels.PanelRound bgSolicitar;
     private javax.swing.JPanel bgTitle;
-    private javax.swing.JButton btnMinimizar;
-    private javax.swing.JButton btnSalir;
     private javax.swing.JLabel lblAgregar;
     private javax.swing.JLabel lblConectar;
     private javax.swing.JLabel lblEliminar;
+    private javax.swing.JLabel lblMinimizar;
     private javax.swing.JLabel lblModificar;
     private javax.swing.JLabel lblMostrar;
     private javax.swing.JLabel lblResultado;
+    private javax.swing.JLabel lblSalir;
     private javax.swing.JLabel lblSolicitar;
     private javax.swing.JLabel lblWulritzer;
     private javax.swing.JPanel panelVentana;
