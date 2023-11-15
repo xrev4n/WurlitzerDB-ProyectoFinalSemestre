@@ -23,8 +23,10 @@ import javax.swing.JPanel;
  * @author felip
  */
 public class Modificar extends javax.swing.JPanel {
+
     ArrayList<Cancion> listaCanciones = new ArrayList<>();
     private DefaultListModel<String> listModelJList;
+
     /**
      * Creates new form ModificarPanel
      */
@@ -169,16 +171,29 @@ public class Modificar extends javax.swing.JPanel {
 
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
         // TODO add your handling code here:
-        //Cambia a panel Modificar2
-        Modificar2 mosPn = new Modificar2();
-        mosPn.setSize(580, 570);
-        mosPn.setLocation(0, 0);
+        int selectedIndex = JListCanciones.getSelectedIndex();
 
-        Agregar.removeAll();
-        Agregar.add(mosPn);  // No se especifica restricción, ya que usas diseño absoluto
-        Agregar.revalidate();
-        Agregar.repaint();
+        if (selectedIndex != -1) {
+            //Obtener elemento seleccionado
+            String selectedItemFormat = listModelJList.getElementAt(selectedIndex);
 
+            // Obtener el ID del elemento seleccionado
+            int selectedId = Integer.parseInt(selectedItemFormat.split("\\.")[0]);
+
+            // Crear una instancia de Modificar2 pasando el ID
+            Modificar2 panelModificar2 = new Modificar2(selectedId);
+            panelModificar2.setSize(580, 570);
+            panelModificar2.setLocation(0, 0);
+
+            // Reemplazar el panel actual con el panel Modificar2
+            Container contentPane = getParent();
+            contentPane.removeAll();
+            contentPane.add(panelModificar2);
+            contentPane.revalidate();
+            contentPane.repaint();
+        } else {
+            // Mostrar un mensaje o tomar otra acción si no se ha seleccionado ninguna canción.
+        }
 
     }//GEN-LAST:event_btnModificarActionPerformed
     private void LlenarJList() {
