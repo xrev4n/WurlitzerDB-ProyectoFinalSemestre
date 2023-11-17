@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-11-2023 a las 21:58:10
+-- Tiempo de generación: 18-11-2023 a las 00:34:31
 -- Versión del servidor: 10.4.28-MariaDB
--- Versión de PHP: 8.2.4
+-- Versión de PHP: 8.0.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -43,7 +43,6 @@ CREATE TABLE `cancion` (
 --
 
 INSERT INTO `cancion` (`id_cancion`, `titulo`, `autor`, `disco`, `anio`, `minuto`, `segundo`, `estilo`) VALUES
-(1, 'Bohemian Rhapsody', 'Queen', 'A Night at the Opera', 1975, 5, 55, 'Rock'),
 (2, 'Shape of You', 'Ed Sheeran', '÷', 2017, 3, 54, 'Pop'),
 (3, 'Billie Jean', 'Michael Jackson', 'Thriller', 1982, 4, 54, 'Pop'),
 (4, 'Hotel California', 'Eagles', 'Hotel California', 1976, 6, 30, 'Rock'),
@@ -75,7 +74,8 @@ CREATE TABLE `reproduccion` (
 --
 
 INSERT INTO `reproduccion` (`id_reproduccion`, `id_cancion`, `nombre`, `fecha`, `escuela`) VALUES
-(1000, 1, 'Felipe', '2023-11-17', 'Douc');
+(1000, 1, 'Felipe', '2023-11-17', 'Douc'),
+(1001, 5, 'dsfds', '2023-11-17', 'fdssd');
 
 --
 -- Índices para tablas volcadas
@@ -108,17 +108,7 @@ ALTER TABLE `cancion`
 -- AUTO_INCREMENT de la tabla `reproduccion`
 --
 ALTER TABLE `reproduccion`
-  MODIFY `id_reproduccion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1001;
-
---
--- Restricciones para tablas volcadas
---
-
---
--- Filtros para la tabla `reproduccion`
---
-ALTER TABLE `reproduccion`
-  ADD CONSTRAINT `reproduccion_ibfk_1` FOREIGN KEY (`id_cancion`) REFERENCES `cancion` (`id_cancion`);
+  MODIFY `id_reproduccion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1002;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
