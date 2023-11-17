@@ -66,20 +66,20 @@ public class Solicitar2 extends javax.swing.JPanel {
         jTable1.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "ID", "Nombre", "Fecha", "Escuela"
+                "ID", "ID Reproduccion", "Nombre", "Fecha", "Escuela"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class
+                java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, true, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -123,6 +123,7 @@ public class Solicitar2 extends javax.swing.JPanel {
                 // Procesar los resultados
                 while (resultSet.next()) {
                     Reproduccions reproduccion = new Reproduccions(
+                            resultSet.getInt("id_reproduccion"),
                             resultSet.getInt("id_cancion"),
                             resultSet.getString("nombre"),
                             resultSet.getString("fecha"),
@@ -153,6 +154,7 @@ public class Solicitar2 extends javax.swing.JPanel {
 
     for (Reproduccions reproduccion : listaReproduccion) {
         Object[] rowData = {
+            reproduccion.getId_reproduccion(),
             reproduccion.getId_cancion(),
             reproduccion.getNombre(),
             reproduccion.getFecha(),

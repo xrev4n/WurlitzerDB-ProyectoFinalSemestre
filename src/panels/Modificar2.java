@@ -385,7 +385,7 @@ public final class Modificar2 extends javax.swing.JPanel {
             String contraseña = "";
 
             try (Connection conexion = DriverManager.getConnection(url, usuario, contraseña)) {
-                String sql = "UPDATE cancion SET titulo=?, autor=?, disco=?, año=?, duracion_minuto=?, duracion_segundo=?, estilo=? WHERE id_cancion=?";
+                String sql = "UPDATE cancion SET titulo=?, autor=?, disco=?, anio=?, minuto=?, segundo=?, estilo=? WHERE id_cancion=?";
 
                 try (PreparedStatement preparedStatement = conexion.prepareStatement(sql)) {
                     // Obtener los valores de los JTextField

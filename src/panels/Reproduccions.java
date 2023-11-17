@@ -11,6 +11,7 @@ package panels;
 public class Reproduccions {
     
     private int id_cancion;
+    private int id_reproduccion;
     private String nombre;
     private String fecha;
     private String escuela;
@@ -21,6 +22,14 @@ public class Reproduccions {
 
     public void setId_cancion(int id_cancion) {
         this.id_cancion = id_cancion;
+    }
+
+    public int getId_reproduccion() {
+        return id_reproduccion;
+    }
+
+    public void setId_reproduccion(int id_reproduccion) {
+        this.id_reproduccion = id_reproduccion;
     }
 
     public String getNombre() {
@@ -47,8 +56,9 @@ public class Reproduccions {
         this.escuela = escuela;
     }
 
-    public Reproduccions(int id_cancion, String nombre, String fecha, String escuela) {
+    public Reproduccions(int id_cancion, int id_reproduccion, String nombre, String fecha, String escuela) {
         this.id_cancion = id_cancion;
+        this.id_reproduccion = id_reproduccion;
         this.nombre = nombre;
         this.fecha = fecha;
         this.escuela = escuela;
@@ -56,4 +66,8 @@ public class Reproduccions {
 
     public Reproduccions() {
     }
+
+    
+
+    
 }

@@ -149,9 +149,9 @@ public class Modificar extends javax.swing.JPanel {
                             resultSet.getString("titulo"),
                             resultSet.getString("autor"),
                             resultSet.getString("disco"),
-                            resultSet.getInt("año"),
-                            resultSet.getInt("duracion_minuto"),
-                            resultSet.getInt("duracion_segundo"),
+                            resultSet.getInt("anio"),
+                            resultSet.getInt("minuto"),
+                            resultSet.getInt("segundo"),
                             resultSet.getString("estilo")
                     );
 

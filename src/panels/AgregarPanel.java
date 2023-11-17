@@ -275,7 +275,7 @@ public class AgregarPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         Cancion cancionAux = new Cancion();
 
-        cancionAux.setId_cancion(Integer.parseInt(txtID.getText()));
+        
         cancionAux.setTitulo(txtTitulo.getText());
         cancionAux.setAutor(txtAutor.getText());
         cancionAux.setDisco(txtDisco.getText());
@@ -312,7 +312,7 @@ public class AgregarPanel extends javax.swing.JPanel {
 
     private void lblLimpiarMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLimpiarMouseReleased
         // TODO add your handling code here:
-        txtID.setText("");
+       
         txtTitulo.setText("");
         txtAutor.setText("");
         txtDisco.setText("");
@@ -366,17 +366,17 @@ public class AgregarPanel extends javax.swing.JPanel {
         // Establecer la conexión
         Connection conexion = DriverManager.getConnection(url, usuario, contraseña);
         // Crear la sentencia SQL para la inserción
-        String sql = "INSERT INTO cancion (id_cancion, titulo, autor, disco, año, duracion_minuto, duracion_segundo, estilo) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO cancion (titulo, autor, disco, anio, minuto, segundo, estilo) VALUES (?, ?, ?, ?, ?, ?, ?)";
         try (PreparedStatement preparedStatement = conexion.prepareStatement(sql)) {
             // Establecer los valores de los parámetros
-            preparedStatement.setInt(1, cancion.getId_cancion());
-            preparedStatement.setString(2, cancion.getTitulo());
-            preparedStatement.setString(3, cancion.getAutor());
-            preparedStatement.setString(4, cancion.getDisco());
-            preparedStatement.setInt(5, cancion.getAnio());
-            preparedStatement.setInt(6, cancion.getDuracion_minuto());
-            preparedStatement.setInt(7, cancion.getDuracion_segundo());
-            preparedStatement.setString(8, cancion.getEstilo());
+            
+            preparedStatement.setString(1, cancion.getTitulo());
+            preparedStatement.setString(2, cancion.getAutor());
+            preparedStatement.setString(3, cancion.getDisco());
+            preparedStatement.setInt(4, cancion.getAnio());
+            preparedStatement.setInt(5, cancion.getDuracion_minuto());
+            preparedStatement.setInt(6, cancion.getDuracion_segundo());
+            preparedStatement.setString(7, cancion.getEstilo());
 
             // Ejecutar la inserción
             preparedStatement.executeUpdate();
