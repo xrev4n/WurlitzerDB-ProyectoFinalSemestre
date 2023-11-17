@@ -12,5 +12,5 @@ import java.util.ArrayList;
  */
 public class Reproducciones {
     
-    ArrayList<Reproduccion> listaReproduccion = new ArrayList();
+    ArrayList<Principal> listaReproduccion = new ArrayList();
 }

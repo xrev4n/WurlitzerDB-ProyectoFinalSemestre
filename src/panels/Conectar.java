@@ -54,7 +54,7 @@ public class Conectar extends javax.swing.JFrame {
     public Conectar() {
         initComponents();
 
-        Reproduccion agPn = new Reproduccion();
+        Principal agPn = new Principal();
         agPn.setSize(800, 600);
         agPn.setLocation(0, 0);
         this.setResizable(false);
@@ -148,6 +148,9 @@ public class Conectar extends javax.swing.JFrame {
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 lblWulritzerMouseExited(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                lblWulritzerMouseReleased(evt);
             }
         });
 
@@ -441,15 +444,7 @@ public class Conectar extends javax.swing.JFrame {
     }//GEN-LAST:event_panelVentanaMouseDragged
 
     private void lblWulritzerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblWulritzerMouseClicked
-        // TODO add your handling code here:
-        Reproduccion agPn = new Reproduccion();
-        agPn.setSize(580, 570);
-        agPn.setLocation(0, 0);
-
-        Agregar.removeAll();
-        Agregar.add(agPn, BorderLayout.CENTER);
-        Agregar.revalidate();
-        Agregar.repaint();        
+        // TODO add your handling code here:   
     }//GEN-LAST:event_lblWulritzerMouseClicked
 
     private void lblWulritzerMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblWulritzerMouseEntered
@@ -641,6 +636,18 @@ public class Conectar extends javax.swing.JFrame {
         // TODO add your handling code here:
         lblMinimizar.setForeground(new Color(0x1C2541));
     }//GEN-LAST:event_lblMinimizarMouseExited
+
+    private void lblWulritzerMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblWulritzerMouseReleased
+        // TODO add your handling code here:
+        Principal agPn = new Principal();
+        agPn.setSize(580, 570);
+        agPn.setLocation(0, 0);
+
+        Agregar.removeAll();
+        Agregar.add(agPn, BorderLayout.CENTER);
+        Agregar.revalidate();
+        Agregar.repaint();     
+    }//GEN-LAST:event_lblWulritzerMouseReleased
 
     /**
      * @param args the command line arguments

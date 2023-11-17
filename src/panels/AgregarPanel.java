@@ -43,8 +43,6 @@ public class AgregarPanel extends javax.swing.JPanel {
         txtTitulo = new javax.swing.JTextField();
         txtDisco = new javax.swing.JTextField();
         txtDuracionSeg = new javax.swing.JTextField();
-        lblID = new javax.swing.JLabel();
-        txtID = new javax.swing.JTextField();
         lblResultado = new javax.swing.JLabel();
         txtAutor = new javax.swing.JTextField();
         txtDuracionMin = new javax.swing.JTextField();
@@ -55,7 +53,6 @@ public class AgregarPanel extends javax.swing.JPanel {
         lblAño = new javax.swing.JLabel();
         lblDuracionSeg = new javax.swing.JLabel();
         lblDisco = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
         jSeparator4 = new javax.swing.JSeparator();
@@ -93,27 +90,17 @@ public class AgregarPanel extends javax.swing.JPanel {
         txtDisco.setBackground(new java.awt.Color(234, 246, 255));
         txtDisco.setFont(new java.awt.Font("Roboto Thin", 0, 18)); // NOI18N
         txtDisco.setBorder(null);
-        bg.add(txtDisco, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 200, 200, 30));
+        txtDisco.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDiscoActionPerformed(evt);
+            }
+        });
+        bg.add(txtDisco, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, 200, 30));
 
         txtDuracionSeg.setBackground(new java.awt.Color(234, 246, 255));
         txtDuracionSeg.setFont(new java.awt.Font("Roboto Thin", 0, 18)); // NOI18N
         txtDuracionSeg.setBorder(null);
         bg.add(txtDuracionSeg, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 420, 200, 30));
-
-        lblID.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
-        lblID.setForeground(new java.awt.Color(11, 19, 43));
-        lblID.setText("ID");
-        bg.add(lblID, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 80, 200, -1));
-
-        txtID.setBackground(new java.awt.Color(234, 246, 255));
-        txtID.setFont(new java.awt.Font("Roboto Thin", 0, 18)); // NOI18N
-        txtID.setBorder(null);
-        txtID.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtIDActionPerformed(evt);
-            }
-        });
-        bg.add(txtID, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, 200, 30));
 
         lblResultado.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         lblResultado.setForeground(new java.awt.Color(11, 19, 43));
@@ -143,22 +130,27 @@ public class AgregarPanel extends javax.swing.JPanel {
         txtEstilo.setBackground(new java.awt.Color(234, 246, 255));
         txtEstilo.setFont(new java.awt.Font("Roboto Thin", 0, 18)); // NOI18N
         txtEstilo.setBorder(null);
-        bg.add(txtEstilo, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 420, 200, 30));
+        bg.add(txtEstilo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 330, 200, 30));
 
         lblEstilo.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         lblEstilo.setForeground(new java.awt.Color(11, 19, 43));
         lblEstilo.setText("Estilo");
-        bg.add(lblEstilo, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 390, 200, 30));
+        bg.add(lblEstilo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 300, 200, 30));
 
         txtAño.setBackground(new java.awt.Color(234, 246, 255));
         txtAño.setFont(new java.awt.Font("Roboto Thin", 0, 18)); // NOI18N
         txtAño.setBorder(null);
-        bg.add(txtAño, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 300, 200, 30));
+        txtAño.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtAñoActionPerformed(evt);
+            }
+        });
+        bg.add(txtAño, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 210, 200, 30));
 
         lblAño.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         lblAño.setForeground(new java.awt.Color(11, 19, 43));
         lblAño.setText("Año");
-        bg.add(lblAño, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 270, 90, 30));
+        bg.add(lblAño, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 180, 90, 30));
 
         lblDuracionSeg.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         lblDuracionSeg.setForeground(new java.awt.Color(11, 19, 43));
@@ -168,15 +160,14 @@ public class AgregarPanel extends javax.swing.JPanel {
         lblDisco.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         lblDisco.setForeground(new java.awt.Color(11, 19, 43));
         lblDisco.setText("Disco");
-        bg.add(lblDisco, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 170, 200, 30));
-        bg.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 140, 200, 10));
+        bg.add(lblDisco, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 80, 200, 30));
         bg.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 200, 10));
         bg.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 200, 10));
         bg.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 200, 10));
-        bg.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 450, 200, 10));
+        bg.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 360, 200, 10));
         bg.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 450, 200, 10));
-        bg.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 330, 200, 10));
-        bg.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 230, 200, 10));
+        bg.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 240, 200, 10));
+        bg.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 140, 200, 10));
 
         lblAgregarCanciones.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
         lblAgregarCanciones.setForeground(new java.awt.Color(11, 19, 43));
@@ -253,10 +244,6 @@ public class AgregarPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDuracionMinActionPerformed
 
-    private void txtIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIDActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtIDActionPerformed
-
     private void lblEnviarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEnviarMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_lblEnviarMouseClicked
@@ -322,12 +309,19 @@ public class AgregarPanel extends javax.swing.JPanel {
         txtEstilo.setText("");
     }//GEN-LAST:event_lblLimpiarMouseReleased
 
+    private void txtDiscoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDiscoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDiscoActionPerformed
+
+    private void txtAñoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAñoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAñoActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;
     private panels.PanelRound bgEnviar;
     private panels.PanelRound bgLimpiar;
-    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
@@ -343,7 +337,6 @@ public class AgregarPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lblDuracionSeg;
     private javax.swing.JLabel lblEnviar;
     private javax.swing.JLabel lblEstilo;
-    private javax.swing.JLabel lblID;
     private javax.swing.JLabel lblLimpiar;
     private javax.swing.JLabel lblResultado;
     private javax.swing.JLabel lblTitulo;
@@ -353,7 +346,6 @@ public class AgregarPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtDuracionMin;
     private javax.swing.JTextField txtDuracionSeg;
     private javax.swing.JTextField txtEstilo;
-    private javax.swing.JTextField txtID;
     private javax.swing.JTextField txtTitulo;
     // End of variables declaration//GEN-END:variables
 
