@@ -11,6 +11,7 @@ import javax.swing.JList;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
@@ -21,7 +22,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Solicitar2 extends javax.swing.JPanel {
 
-    ArrayList<Cancion> listaCanciones = new ArrayList();
+    ArrayList<Reproduccions> listaReproduccion = new ArrayList();
 
     /**
      * Creates new form MostrarPanel
@@ -65,20 +66,20 @@ public class Solicitar2 extends javax.swing.JPanel {
         jTable1.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "ID", "Titulo", "Autor", "Disco", "Año", "Minuto", "Segundo", "Estilo"
+                "ID", "Nombre", "Fecha", "Escuela"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false
+                false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -102,7 +103,7 @@ public class Solicitar2 extends javax.swing.JPanel {
 
     private void btnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarActionPerformed
         // TODO add your handling code here:
-        listaCanciones.clear();
+        listaReproduccion.clear();
         try {
             // Configuración de la conexión a la base de datos
             String url = "jdbc:mysql://localhost:3306/wurlitzerdb";
@@ -121,18 +122,15 @@ public class Solicitar2 extends javax.swing.JPanel {
 
                 // Procesar los resultados
                 while (resultSet.next()) {
-                    Cancion cancion = new Cancion(
+                    Reproduccions reproduccion = new Reproduccions(
                             resultSet.getInt("id_cancion"),
-                            resultSet.getString("titulo"),
-                            resultSet.getString("autor"),
-                            resultSet.getString("disco"),
-                            resultSet.getInt("año"),
-                            resultSet.getInt("duracion_minuto"),
-                            resultSet.getInt("duracion_segundo"),
-                            resultSet.getString("estilo")
+                            resultSet.getString("nombre"),
+                            resultSet.getString("fecha"),
+                            resultSet.getString("escuela")
+                       
                     );
 
-                    listaCanciones.add(cancion);
+                    listaReproduccion.add(reproduccion);
 
                 }
                 LlenarTabla();
@@ -151,21 +149,17 @@ public class Solicitar2 extends javax.swing.JPanel {
 
     private void LlenarTabla() {
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-        model.setRowCount(0); // Clear the existing table data
+    model.setRowCount(0); // Limpiar la tabla antes de llenarla
 
-        for (Cancion cancion : listaCanciones) {
-            Object[] rowData = {
-                cancion.getId_cancion(),
-                cancion.getTitulo(),
-                cancion.getAutor(),
-                cancion.getDisco(),
-                cancion.getAnio(),
-                cancion.getDuracion_minuto(),
-                cancion.getDuracion_segundo(),
-                cancion.getEstilo()
-            };
-            model.addRow(rowData);
-        }
+    for (Reproduccions reproduccion : listaReproduccion) {
+        Object[] rowData = {
+            reproduccion.getId_cancion(),
+            reproduccion.getNombre(),
+            reproduccion.getFecha(),
+            reproduccion.getEscuela()
+        };
+        model.addRow(rowData);
+    }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

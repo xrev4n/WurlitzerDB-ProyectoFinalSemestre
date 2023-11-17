@@ -347,10 +347,11 @@ public class Solicitar extends javax.swing.JPanel {
 
             //PROGRAMAR AQUI BOTON ENVIAR
             String escuela = txtEscuela.getText();
+            String nombre = txtNombre.getText();
             if (cancionSeleccionada != null) {
                 try {
                     // Llamar al método para insertar la solicitud en la base de datos
-                    insertarSolicitudEnDB(cancionSeleccionada, escuela);
+                    insertarSolicitudEnDB(cancionSeleccionada, nombre ,escuela);
                     System.out.println("Solicitud enviada correctamente. ID de la canción: " + selectedId);
                 } catch (SQLException ex) {
                     ex.printStackTrace();
@@ -407,7 +408,7 @@ public class Solicitar extends javax.swing.JPanel {
     private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
 
-    public static void insertarSolicitudEnDB(Cancion cancionSeleccionada, String escuela) throws SQLException {
+    public static void insertarSolicitudEnDB(Cancion cancionSeleccionada, String nombre , String escuela) throws SQLException {
         // Configuración de la conexión a la base de datos
         java.sql.Timestamp fechaActualSQL = java.sql.Timestamp.valueOf(LocalDateTime.now());
 
@@ -420,12 +421,13 @@ public class Solicitar extends javax.swing.JPanel {
             // Establecer la conexión
             Connection conexion = DriverManager.getConnection(url, usuario, contraseña);
             // Crear la sentencia SQL para la inserción
-            String sql = "INSERT INTO reproduccion (id_cancion, fecha, escuela) VALUES (?, ?, ?)";
+            String sql = "INSERT INTO reproduccion (id_cancion, nombre , fecha, escuela) VALUES (?, ?, ? , ?)";
             try (PreparedStatement preparedStatement = conexion.prepareStatement(sql)) {
                 // Establecer los valores de los parámetros
                 preparedStatement.setInt(1, cancionSeleccionada.getId_cancion());
-                preparedStatement.setTimestamp(2, fechaActualSQL);
-                preparedStatement.setString(3, escuela);
+                preparedStatement.setString(2, nombre);
+                preparedStatement.setTimestamp(3, fechaActualSQL);
+                preparedStatement.setString(4, escuela);
 
                 // Ejecutar la inserción
                 preparedStatement.executeUpdate();
