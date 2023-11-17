@@ -8,10 +8,12 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
+import javax.swing.JList;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -25,6 +27,7 @@ public class Solicitar extends javax.swing.JPanel {
 
     ArrayList<Cancion> listaCanciones = new ArrayList();
     private DefaultListModel<String> listModelJList;
+    private Cancion cancionSeleccionada;
 
     /**
      * Creates new form AgregarPanel
@@ -32,7 +35,7 @@ public class Solicitar extends javax.swing.JPanel {
     public Solicitar() {
         initComponents();
         listModelJList = new DefaultListModel<>();
-        JListCanciones.setModel(listModelJList);
+        JListCanciones1.setModel(listModelJList);
     }
 
     /**
@@ -54,7 +57,7 @@ public class Solicitar extends javax.swing.JPanel {
         jSeparator6 = new javax.swing.JSeparator();
         lblAgregarCanciones = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        JListCanciones = new javax.swing.JList<>();
+        JListCanciones1 = new javax.swing.JList<>();
         btnRefresh = new javax.swing.JButton();
         btnSolicitudes = new panels.PanelRound();
         lblSolicitudes = new javax.swing.JLabel();
@@ -105,12 +108,12 @@ public class Solicitar extends javax.swing.JPanel {
         lblAgregarCanciones.setText("Solicitar canción");
         bg.add(lblAgregarCanciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 580, 30));
 
-        JListCanciones.setModel(new javax.swing.AbstractListModel<String>() {
+        JListCanciones1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane1.setViewportView(JListCanciones);
+        jScrollPane1.setViewportView(JListCanciones1);
 
         bg.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 540, 230));
 
@@ -308,6 +311,8 @@ public class Solicitar extends javax.swing.JPanel {
 
     private void lblEnviarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEnviarMouseClicked
         // TODO add your handling code here:
+
+
     }//GEN-LAST:event_lblEnviarMouseClicked
 
     private void lblEnviarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEnviarMouseEntered
@@ -321,8 +326,42 @@ public class Solicitar extends javax.swing.JPanel {
     }//GEN-LAST:event_lblEnviarMouseExited
 
     private void lblEnviarMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEnviarMouseReleased
-        // TODO add your handling code here:
-        //PROGRAMAR AQUI BOTON ENVIAR
+        // Obtener el índice de la canción seleccionada en la JList
+        int selectedIndex = JListCanciones1.getSelectedIndex();
+
+        // Verificar si se ha seleccionado una canción
+        if (selectedIndex != -1) {
+            // Obtener el formato del elemento seleccionado (ID.NOMBRE.AUTOR.DISCO.AÑO)
+            String selectedItemFormat = listModelJList.getElementAt(selectedIndex);
+
+            // Obtener el ID del elemento seleccionado
+            int selectedId = Integer.parseInt(selectedItemFormat.split("\\.")[0]);
+
+            // Buscar la canción seleccionada en la lista de canciones
+            for (Cancion cancion : listaCanciones) {
+                if (cancion.getId_cancion() == selectedId) {
+                    cancionSeleccionada = cancion; // Asignar la canción seleccionada
+                    break;
+                }
+            }
+
+            //PROGRAMAR AQUI BOTON ENVIAR
+            String escuela = txtEscuela.getText();
+            if (cancionSeleccionada != null) {
+                try {
+                    // Llamar al método para insertar la solicitud en la base de datos
+                    insertarSolicitudEnDB(cancionSeleccionada, escuela);
+                    System.out.println("Solicitud enviada correctamente. ID de la canción: " + selectedId);
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                    System.err.println("Error al enviar la solicitud a la base de datos.");
+                }
+            } else {
+                System.err.println("No se ha seleccionado ninguna canción.");
+            }
+        } else {
+            System.err.println("No se ha seleccionado ninguna canción.");
+        }
     }//GEN-LAST:event_lblEnviarMouseReleased
     private void LlenarJList() {
         listModelJList.clear(); // Limpiar el modelo del JList
@@ -338,12 +377,17 @@ public class Solicitar extends javax.swing.JPanel {
             listModelJList.addElement(formato);
         }
 
-        JListCanciones.setModel(listModelJList); // Actualizar el JList con el nuevo modelo
+        JListCanciones1.setModel(listModelJList); // Actualizar el JList con el nuevo modelo
+
+        // Seleccionar el primer elemento de la lista (si existe)
+        if (listModelJList.getSize() > 0) {
+            JListCanciones1.setSelectedIndex(0);
+            // También puedes agregar la lógica para asignar la canción seleccionada aquí si es necesario
+        }
+
     }
-
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JList<String> JListCanciones;
+    private javax.swing.JList<String> JListCanciones1;
     private javax.swing.JPanel bg;
     private panels.PanelRound bgEnviar;
     private panels.PanelRound bgLimpiar;
@@ -363,31 +407,35 @@ public class Solicitar extends javax.swing.JPanel {
     private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
 
-    public static void insertarSolicitudEnDB(Cancion cancion) throws SQLException {
+    public static void insertarSolicitudEnDB(Cancion cancionSeleccionada, String escuela) throws SQLException {
+        // Configuración de la conexión a la base de datos
+        java.sql.Timestamp fechaActualSQL = java.sql.Timestamp.valueOf(LocalDateTime.now());
+
         // Configuración de la conexión a la base de datos
         String url = "jdbc:mysql://localhost:3306/wurlitzerdb";
         String usuario = "root";
         String contraseña = "";
 
-        // Establecer la conexión
-        Connection conexion = DriverManager.getConnection(url, usuario, contraseña);
-        // Crear la sentencia SQL para la inserción
-        String sql = "INSERT INTO cancion (id_cancion, titulo, autor, disco, año, duracion_minuto, duracion_segundo, estilo) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-        try (PreparedStatement preparedStatement = conexion.prepareStatement(sql)) {
-            // Establecer los valores de los parámetros
-            preparedStatement.setInt(1, cancion.getId_cancion());
-            preparedStatement.setString(2, cancion.getTitulo());
-            preparedStatement.setString(3, cancion.getAutor());
-            preparedStatement.setString(4, cancion.getDisco());
-            preparedStatement.setInt(5, cancion.getAnio());
-            preparedStatement.setInt(6, cancion.getDuracion_minuto());
-            preparedStatement.setInt(7, cancion.getDuracion_segundo());
-            preparedStatement.setString(8, cancion.getEstilo());
+        try {
+            // Establecer la conexión
+            Connection conexion = DriverManager.getConnection(url, usuario, contraseña);
+            // Crear la sentencia SQL para la inserción
+            String sql = "INSERT INTO reproduccion (id_cancion, fecha, escuela) VALUES (?, ?, ?)";
+            try (PreparedStatement preparedStatement = conexion.prepareStatement(sql)) {
+                // Establecer los valores de los parámetros
+                preparedStatement.setInt(1, cancionSeleccionada.getId_cancion());
+                preparedStatement.setTimestamp(2, fechaActualSQL);
+                preparedStatement.setString(3, escuela);
 
-            // Ejecutar la inserción
-            preparedStatement.executeUpdate();
+                // Ejecutar la inserción
+                preparedStatement.executeUpdate();
 
-            System.out.println("Canción insertada correctamente en la base de datos.");
+                System.out.println("Canción insertada correctamente en la base de datos.");
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            System.err.println("Error al enviar la solicitud a la base de datos.");
         }
     }
+
 }

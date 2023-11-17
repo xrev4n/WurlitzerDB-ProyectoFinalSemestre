@@ -113,7 +113,7 @@ public class Solicitar2 extends javax.swing.JPanel {
             Connection conexion = DriverManager.getConnection(url, usuario, contraseña);
 
             // Crear la sentencia SQL para la consulta
-            String sql = "SELECT * FROM cancion";
+            String sql = "SELECT * FROM reproduccion";
 
             // Crear el PreparedStatement y ejecutar la consulta
             try (PreparedStatement preparedStatement = conexion.prepareStatement(sql)) {
